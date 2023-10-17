@@ -52,3 +52,17 @@ console.log(filtered);
 // find method
 var filtval = salaryarray2.find(function (sal) { return sal > 60000; });
 console.log(filtval);
+// Consider following array
+var salaryarray3 = [56000, 98000, 67000, 45000, 56000, 34000, 67000, 89000];
+// increment every salary of this array by 5000, store new salaries in new array. 
+//display new array
+// use own logic
+var mappedArray = [];
+for (var _b = 0, salaryarray_3 = salaryarray; _b < salaryarray_3.length; _b++) {
+    var salary = salaryarray_3[_b];
+    mappedArray.push(salary + 5000);
+}
+console.log(mappedArray);
+// map method
+var maparray = salaryarray3.map(function (salary) { return salary + 5000; });
+console.log(maparray);

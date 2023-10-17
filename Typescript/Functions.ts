@@ -69,3 +69,20 @@ console.log(filtered);
 
 let filtval=salaryarray2.find(sal=>sal>60000);
 console.log(filtval);
+
+
+
+// Consider following array
+const salaryarray3=[56000,98000,67000,45000,56000,34000,67000,89000];
+// increment every salary of this array by 5000, store new salaries in new array. 
+//display new array
+// use own logic
+
+let mappedArray:number[]=[];
+for(let salary of salaryarray){
+    mappedArray.push(salary+5000)
+}
+console.log(mappedArray);
+// map method
+const maparray=salaryarray3.map(salary=>salary+5000)
+console.log(maparray);
