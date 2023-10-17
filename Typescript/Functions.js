@@ -36,3 +36,19 @@ console.log(filteredArray);
 // filter method
 var array2 = salaryarray.filter(function (salary) { return salary > 60000; });
 console.log(array2);
+// Consider following array
+var salaryarray2 = [56000, 98000, 67000, 45000, 56000, 34000, 67000, 89000];
+// store first salary greater than 60000 in a variable and display it
+// implement using ur own logic 
+var filtered = 0;
+for (var _a = 0, salaryarray_2 = salaryarray; _a < salaryarray_2.length; _a++) {
+    var salary = salaryarray_2[_a];
+    if (salary > 60000) {
+        filtered = salary;
+        break;
+    }
+}
+console.log(filtered);
+// find method
+var filtval = salaryarray2.find(function (sal) { return sal > 60000; });
+console.log(filtval);
