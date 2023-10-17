@@ -35,3 +35,14 @@ account1.customerId=111111
 account1.accountType="Savings";
 account1.accountBalance=10000;
 console.log(account1);
+
+let account2=new BankAccount();
+account2.accountNumber=8898787878;
+account2.customerId=121212
+account2.accountType="Savings";
+account2.accountBalance=15000;
+console.log(account2);
+
+account1.deposit(5000); 
+console.log(account1);
+console.log(account2);
