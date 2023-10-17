@@ -86,3 +86,22 @@ console.log(mappedArray);
 // map method
 const maparray=salaryarray3.map(salary=>salary+5000)
 console.log(maparray);
+
+
+// Consider following array
+const salaryarray4=[56000,98000,67000,45000,56000,34000,67000,89000];
+// make sum of array elements. display sum
+// use own logic
+
+// reduce method
+
+const total=salaryarray4.reduce((sum,sal)=>sum+sal)
+// initial value of sum=1st element of array // 56000
+// intial value of sal=2nd element of array //98000
+console.log(total);
+
+
+const total2=salaryarray4.reduce((sum,sal)=>sum+sal, 1000)
+// initial value of sum=1000
+// intial value of sal=1st element of array //56000
+console.log(total2);
