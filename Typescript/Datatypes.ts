@@ -27,9 +27,7 @@ let num2=7890;  // number
 //num2="hello";
 
 // type assertions
-
 let companyName;
 companyName="NEOSOFT"; // any
-
 let lower=(<string>companyName).toLowerCase();
 console.log(lower);
