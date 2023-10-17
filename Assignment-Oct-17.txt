@@ -1,0 +1,2 @@
+Implement any other entity class (Book, Employee, Train, Plant...)
+instance variables, instance methods, create 4 object and state change
