@@ -26,7 +26,9 @@ console.log(employee2);
 console.log(employee2.getMonthlySalary()); // subclass method  // function overriding
 
 class Developer extends Employee{
-
+    getMonthlySalary():number{
+        return 8888888;
+    }
 }
 
 
@@ -43,3 +45,8 @@ emp=new Developer();
 // further calls
 
 
+
+
+function showEmployeeSalary(e){
+    e.getMonthlySalary(); // call dynamically must go to that method according to type of object
+}
