@@ -24,3 +24,12 @@ let emp3=new Employee(3,"Sarika",78000);
 let emp4=new Employee(4,"Kumar",90000);
 
 //emp1.employeeId=8; //Cannot assign to 'employeeId' because it is a read-only property.
+
+
+const abc=89; // value constant
+//abc=78;
+
+// u can not use const references to to refer to other object
+const emp5=new Employee(6,"Seema",67000);
+emp5.employeeName="Meena";
+emp5=emp1;
