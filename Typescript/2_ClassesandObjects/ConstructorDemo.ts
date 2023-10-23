@@ -12,7 +12,7 @@ class BankAccount{
         console.log("used to initialize instance variables of object");
     } */
     // more than one constructor not allowed in typescipt class
-    constructor(accountNumber,customerId,accountType,accountBalance){
+    constructor(accountNumber=0,customerId=0,accountType="Current",accountBalance=0){
         this.accountNumber=accountNumber;
         this.customerId=customerId;
         this.accountBalance=accountBalance;
@@ -59,3 +59,6 @@ account1.deposit(5000);
 console.log(account1);
 console.log(account2);
 account2.accountType="Salary";
+
+let account3=new BankAccount();
+console.log(account3);
