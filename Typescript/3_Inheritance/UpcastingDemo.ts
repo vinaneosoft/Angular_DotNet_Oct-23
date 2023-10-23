@@ -41,12 +41,13 @@ emp.employeeName="Sahil Pawr";
 emp.employeeSalary=90000;
 emp.getMonthlySalary(); // Trainer type
 
+/*downcasting */
+let tr=<Trainer>emp;
+
 emp=new Developer();
 // further calls
 
 
-
-
-function showEmployeeSalary(e){
+function showEmployeeSalary(e:Employee){
     e.getMonthlySalary(); // call dynamically must go to that method according to type of object
 }
