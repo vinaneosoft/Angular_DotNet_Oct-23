@@ -1,0 +1,5 @@
+You all know Array. Now learn Set and Map API.
+
+1. Write the difference between Array, Set and Map
+2. Implement a code for  generic Set. Show the use of all API methods of Set 
+3. Implement a code for generic Map with key value pairs. Show the use of all API methods of Map 

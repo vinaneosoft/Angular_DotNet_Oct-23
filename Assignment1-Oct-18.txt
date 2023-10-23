@@ -1,0 +1,9 @@
+Declare City array with any city names from Maharashtra. Solve following problem statements using built in methods find, filter, map, reduce, forEach
+
+1. Find All Cities starting with letter 'M'/'m'
+2. Find first city starting with letter 'M'/'m'
+3. Attach prefix 'MH-' to every city from array and store new cities in new array 
+4. Conctatenate Every City with '&' in between. Display resultant string
+5. Display array of cities using forEach
+
+

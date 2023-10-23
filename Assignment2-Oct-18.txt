@@ -1,0 +1,5 @@
+Implement all below problems statements using HTML, CSS and Javascript Logic
+1. Implement a form to take user name and the checkboxes to take interested courses from user. Display course names selected by user when user submits the form
+2. Implement a form to take name and gender of user. Display "User is Male/Female" depends on user selection when user submits the form
+3. Change the style of h2 after 6000ms using Javascript styling
+4. Implement Basic Image slide show by changing src path of Image after some time interval

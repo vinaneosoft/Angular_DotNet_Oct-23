@@ -1,0 +1,5 @@
+1. Implement BankAccount class and declare instance variables and methods. 
+Declare instance variables private and provide get set properties for every instance variable
+Create Parameterized constructor.
+Create multiple objects by calling parameterized constructor. 
+Try to use get set propeties to access or change value of instance variables.

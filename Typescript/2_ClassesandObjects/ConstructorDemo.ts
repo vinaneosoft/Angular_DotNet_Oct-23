@@ -6,7 +6,18 @@ class BankAccount{
     private customerId:number;
     accountType:string;
     accountBalance:number;
-
+/* 
+    constructor(){
+        console.log("in default constructor");
+        console.log("used to initialize instance variables of object");
+    } */
+    // more than one constructor not allowed in typescipt class
+    constructor(accountNumber,customerId,accountType,accountBalance){
+        this.accountNumber=accountNumber;
+        this.customerId=customerId;
+        this.accountBalance=accountBalance;
+        this.accountType=accountType;
+    }
     get accNum(){
         return this.accountNumber;
     }
@@ -38,24 +49,13 @@ class BankAccount{
 // new keyword : new object created
 
 let account1:BankAccount // custom types
-account1=new BankAccount();  // default constructor called   //1.
+account1=new BankAccount(7878787878,111111,"Savings",10000);  // p constructor called   //1.
 console.log(account1.getDetails());
 console.log("--------");
 console.log(account1);
-// state change    //2.
-account1.accNum=7878787878;
-account1.custId=111111
-account1.accountType="Savings";
-account1.accountBalance=10000;
-console.log(account1);
-
-let account2=new BankAccount();
-account2.accNum=8898787878;
-account2.custId=121212
-account2.accountType="Savings";
-account2.accountBalance=15000;
+let account2=new BankAccount(8898787878,121212,"Savings",15000);
 console.log(account2);
-
 account1.deposit(5000); 
 console.log(account1);
 console.log(account2);
+account2.accountType="Salary";

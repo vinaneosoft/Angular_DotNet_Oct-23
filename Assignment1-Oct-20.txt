@@ -1,0 +1,8 @@
+Create Object Array of BankAccount objects. Use Previous BankAccount class with properties and then solve following problem statements using buitlin methods like forEach,map, reduce, find, filter. 
+
+1. Iterate Array using forEach
+2. Find out all Accounts having Balance < 10000
+2. Find out all Saving Accounts
+3. Find out all Salary Accounts
+4. Display Averange Balance of all accounts
+5. Store all customer Ids in new array

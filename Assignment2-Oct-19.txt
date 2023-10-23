@@ -1,0 +1,5 @@
+1. Learn about Static Variables in Tyepscript
+Write the difference between instance variables and static variables
+
+2. Implement Employee class with properties like id, name, salary and so on..
+Instance variable employee id must be string and its value must be autoincremented like  NEO-1, NEO-2, NEO-3 when u create new Employee object. Implement this code using static incrment counter
