@@ -14,3 +14,5 @@ class Child extends Father,Mother{
        return  this.dream(); // inheritance ambiguity
     }
 }
+
+
