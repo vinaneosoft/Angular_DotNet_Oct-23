@@ -1,0 +1,5 @@
+Implement any other Inheritance program and cover following cocepts
+1. calling sequence
+2. protected variable
+3. method overriding
+4. upcasting
