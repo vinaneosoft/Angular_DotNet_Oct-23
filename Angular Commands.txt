@@ -1,0 +1,5 @@
+To create new project
+ng new projectname
+
+to serve the project
+ng serve  (we must be inside project directory to serve that project)

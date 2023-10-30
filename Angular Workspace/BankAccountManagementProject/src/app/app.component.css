@@ -1,0 +1,7 @@
+.mainDiv{
+    background: lightgreen;
+}
+#mainHeading{
+    text-shadow: 5px 5px 10px;
+    border: 1px solid;
+}
