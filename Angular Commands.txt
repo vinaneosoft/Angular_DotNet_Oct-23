@@ -3,3 +3,10 @@ ng new projectname
 
 to serve the project
 ng serve  (we must be inside project directory to serve that project)
+
+to generate new component
+ng generate component [name]  / ng g c [name]
+
+to install bootstrap latest
+npm i bootstrap
+add css and js path in angular.json

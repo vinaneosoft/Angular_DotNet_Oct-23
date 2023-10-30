@@ -1,0 +1,4 @@
+Create Footer Component and Design it with Bootstrap. Use any Banking webiste for reference
+Footer must have icons
+must have other links
+must be well designed
