@@ -1,0 +1,10 @@
+Create Password field.
+Create Checkbox with label show password
+when u check chebox password must be visible and when u uncheck, password must be hidden
+Hint
+1. use attribute binding for input type attribute
+2. use &event object to check whether checkbox is checked or not (same as js logic)
+
+
+
+

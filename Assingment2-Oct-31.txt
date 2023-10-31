@@ -1,0 +1,10 @@
+Take marks of physics chemistry and maths from user (consider out of 100)
+Display percentage
+
+Implement Switch case for following cases using ngSwitch.
+
+1. percentage>=70 : Distinction
+2. percentage<70 and >=60 First Class
+3. percentage<60 and >=40 pass with second class
+4. percentage<40 and >=0 fail
+default case : Wrong Input given (if -ve marks added)
