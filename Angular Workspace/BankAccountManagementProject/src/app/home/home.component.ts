@@ -9,6 +9,11 @@ export class HomeComponent {
   accountType:string="Savings Account";
   interestRate="8%";
   bankName="";
+  numbers={
+    num1:0,
+    num2:0,
+    addition:0
+  }
   constructor(){
     console.log(this.accountType);
     setTimeout(()=>{
@@ -31,5 +36,8 @@ export class HomeComponent {
   }
   convert(){
    this.bankName=this.bankName.toUpperCase();
+  }
+  addNums(){
+    this.numbers.addition=this.numbers.num1+this.numbers.num2;
   }
 }
