@@ -85,3 +85,9 @@ A world where you can truly, live your success.
 <!-- select the name of website from drop down, whichever website is selected, 
     the link of that webiste must be added in href attribute of a tag 
 -->
+<div>
+    <label>Branches</label>
+    <ol>
+        <li *ngFor="let branch of branches">{{branch}}</li> <!-- 1 li : n lis-->
+    </ol>
+</div>
