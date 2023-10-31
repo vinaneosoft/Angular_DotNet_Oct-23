@@ -54,4 +54,8 @@ export class HomeComponent {
     imgWidth:100,
     altMessage:"No image to display"
   }
+  zoom(){
+    this.imageObject.imgHeight+=200;
+    this.imageObject.imgWidth+=200;
+  }
 }
