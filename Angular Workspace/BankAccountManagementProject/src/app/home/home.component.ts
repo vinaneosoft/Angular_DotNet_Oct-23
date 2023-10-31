@@ -45,4 +45,13 @@ export class HomeComponent {
     console.log(typeof inputEle);
     
   }
+  add(val1:string,val2:string){
+
+  }
+  imageObject={
+    source:"assets/Images/flower1.jpg",
+    imgHeight:450,
+    imgWidth:600,
+    altMessage:"No image to display"
+  }
 }
