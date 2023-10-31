@@ -65,4 +65,5 @@ export class HomeComponent {
   websiteLink="https://www.w3schools.com/"
 
   branches=['Airoli','Mulund','Belapur','Thane','Nerul'];
+  age=0;
 }
