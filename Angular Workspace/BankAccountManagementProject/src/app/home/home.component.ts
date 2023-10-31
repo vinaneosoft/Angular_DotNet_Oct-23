@@ -50,8 +50,8 @@ export class HomeComponent {
   }
   imageObject={
     source:"assets/Images/flower1.jpg",
-    imgHeight:450,
-    imgWidth:600,
+    imgHeight:100,
+    imgWidth:100,
     altMessage:"No image to display"
   }
 }
