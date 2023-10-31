@@ -23,6 +23,16 @@ A world where you can truly, live your success.
     <b>String Interpolation : {{interestRate}}</b>
     <div>
         <h3>2-way DB</h3>
-        <label for="rate">Enter Interest Rate:</label><input type="text" id="rate" [(ngModel)]="interestRate"  (blur)="showValues()" >
+        <label for="rate">Enter Interest Rate:</label>
+        <input type="text" id="rate" [(ngModel)]="interestRate"  (blur)="showValues()" >
     </div>
+</div>
+<div>
+        <h3>Event Binding</h3>
+        <div>
+            <label for="bank">Enter Bank Name</label>
+            <input type="text" id="bank" [(ngModel)]="bankName">
+            <button (click)="convert()">UPPERCASE</button>
+            <p>{{bankName}}</p>
+        </div>   
 </div>

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   accountType:string="Savings Account";
   interestRate="8%";
+  bankName="";
   constructor(){
     console.log(this.accountType);
     setTimeout(()=>{
@@ -27,5 +28,8 @@ export class HomeComponent {
   showValues():void{
     console.log(this.interestRate);
     console.log(this.accountType);
+  }
+  convert(){
+   this.bankName=this.bankName.toUpperCase();
   }
 }
