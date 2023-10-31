@@ -13,6 +13,7 @@ A world where you can truly, live your success.
 </p>
 </section>
 <div>
+    <h3>1-way DB</h3>
     <b>String Interpolation : {{accountType}}</b>
     <div>
         <label for="accountType">Enter Type:</label><input type="text" id="accountType" value="{{accountType}}">
@@ -21,6 +22,7 @@ A world where you can truly, live your success.
 <div>
     <b>String Interpolation : {{interestRate}}</b>
     <div>
-        <label for="rate">Enter Interest Rate:</label><input type="text" id="rate" [(ngModel)]="interestRate" >
+        <h3>2-way DB</h3>
+        <label for="rate">Enter Interest Rate:</label><input type="text" id="rate" [(ngModel)]="interestRate"  (blur)="showValues()" >
     </div>
 </div>

@@ -16,11 +16,16 @@ export class HomeComponent {
       console.log(this.accountType);
       console.log(this.interestRate);
     }, 5000); // Model change
-
+/* 
     setInterval(()=>{
       console.log(this.interestRate);
       console.log(this.accountType);
-    },2000);
+    },2000); */
   
+  }// end
+
+  showValues():void{
+    console.log(this.interestRate);
+    console.log(this.accountType);
   }
 }
