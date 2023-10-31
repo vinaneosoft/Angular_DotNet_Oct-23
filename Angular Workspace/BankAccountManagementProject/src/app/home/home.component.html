@@ -122,5 +122,11 @@ A world where you can truly, live your success.
     <div>
         <input type="number" [(ngModel)]="age" placeholder="enter age">
     </div>
-    
+    <i *ngIf="age>=18 then voterthenblock;else voterelseblock2">this tag is used only to test condition</i>
+    <ng-template #voterthenblock>
+        <p><b>You are allowed for voting... go for further steps</b></p>
+    </ng-template>
+    <ng-template #voterelseblock2>
+        <p><b>Sorry!!! You are not allowed for voting... you must be atleast 18</b></p>
+    </ng-template>
 </div>
