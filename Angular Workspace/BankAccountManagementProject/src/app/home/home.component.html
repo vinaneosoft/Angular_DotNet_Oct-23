@@ -90,4 +90,10 @@ A world where you can truly, live your success.
     <ol>
         <li *ngFor="let branch of branches">{{branch}}</li> <!-- 1 li : n lis-->
     </ol>
+    <ol>
+        <li *ngFor="let branch of branches;let i=index">{{branch}}-{{i}}</li> <!-- 1 li : n lis-->
+    </ol>
+    <ol>
+        <li *ngFor="let branch of branches;let i=index; let e=even; let o=odd">{{branch}}-{{i}}-{{e}}-{{o}}</li> <!-- 1 li : n lis-->
+    </ol>
 </div>
