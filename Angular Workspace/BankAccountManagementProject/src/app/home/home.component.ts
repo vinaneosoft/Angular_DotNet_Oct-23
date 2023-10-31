@@ -40,4 +40,9 @@ export class HomeComponent {
   addNums(){
     this.numbers.addition=this.numbers.num1+this.numbers.num2;
   }
+  access(inputEle:any){
+    console.log(inputEle);
+    console.log(typeof inputEle);
+    
+  }
 }
