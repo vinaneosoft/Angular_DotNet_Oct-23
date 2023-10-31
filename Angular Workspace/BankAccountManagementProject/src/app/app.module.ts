@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { BankAccountComponent } from './bankaccount/bankaccount.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    HomeComponent // other declarations of components goes here
+    HomeComponent,
+    BankAccountComponent // other declarations of components goes here
   ],
   imports: [
     BrowserModule,

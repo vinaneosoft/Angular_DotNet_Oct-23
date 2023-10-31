@@ -1,0 +1,35 @@
+export class BankAccount {
+    constructor(private accountNumber=0,private customerId=0,private accountBalance=0,private accountType="savings")
+    {}
+    get accNum(){
+        return this.accountNumber;
+    }
+    get custId(){
+        return this.customerId;
+    }
+    get accBalance(){
+        return this.accountBalance;
+    }
+    get accType(){
+        return this.accountType;
+    }
+    set accNum(accountNumber:number){
+        this.accountNumber=accountNumber
+    }
+    set custId(customerId:number){
+        this.customerId=customerId
+    }
+    set accBalance(accountBalance:number){
+        this.accountBalance=accountBalance
+    }
+    set accType(accountType:string){
+        this.accountType=accountType
+    }
+    deposit(deptAmount:number){
+
+    }
+    withdraw(withAmount:number){
+
+    }
+}
+

@@ -1,0 +1,5 @@
+1. Create and export Entity class : instance variables, get set properties, instance methods
+
+2. BankAccountComponent (create ur own entity component) : import class : Entity type array
+
+3. Display array in table using ngFor on html template
