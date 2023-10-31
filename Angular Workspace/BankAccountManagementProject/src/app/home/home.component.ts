@@ -7,11 +7,20 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   accountType:string="Savings Account";
+  interestRate="8%";
   constructor(){
     console.log(this.accountType);
     setTimeout(()=>{
       this.accountType="Salary Account"; 
+      this.interestRate="6%"
       console.log(this.accountType);
+      console.log(this.interestRate);
     }, 5000); // Model change
+
+    setInterval(()=>{
+      console.log(this.interestRate);
+      console.log(this.accountType);
+    },2000);
+  
   }
 }
