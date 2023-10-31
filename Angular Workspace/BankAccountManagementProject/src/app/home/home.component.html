@@ -99,6 +99,27 @@ A world where you can truly, live your success.
     </ol>
 </div>
 <div>
+        <label>Choose Choice from option</label>
+        <select [(ngModel)]="choice">
+            <option value="1">PUSH</option>
+            <option value="2">POP</option>
+        </select>
+
+    <section [ngSwitch]="choice">
+        <section *ngSwitchCase="1" class="border border-2 p-2">
+            <input type="text" placeholder="enter branch to add in array" [(ngModel)]="branchLocation"> 
+            <button (click)="branches.push(branchLocation)">PUSH</button>
+        </section>
+        <section *ngSwitchCase="2"  class="border border-2 p-2">
+            <button (click)="popArray()">POP</button>
+            <p>{{poppedEle}}</p>
+        </section>
+        <section *ngSwitchDefault>
+             <p>No Choice Matched</p>
+        </section>
+    </section>
+</div>
+<div>
     <h3>ngIf</h3>
     <div>
         <input type="number" [(ngModel)]="age" placeholder="enter age">

@@ -65,5 +65,11 @@ export class HomeComponent {
   websiteLink="https://www.w3schools.com/"
 
   branches=['Airoli','Mulund','Belapur','Thane','Nerul'];
+  branchLocation="";
   age=0;
+  choice=0;
+  poppedEle:string|undefined="";
+  popArray(){
+    this.poppedEle=this.branches.pop();
+  }
 }
