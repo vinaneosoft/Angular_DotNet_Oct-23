@@ -72,3 +72,16 @@ A world where you can truly, live your success.
     <h3>Attribute</h3>
     <img [src]="imageObject.source" [alt]="imageObject.altMessage" [height]="imageObject.imgHeight" width="imageObject.imgWidth" (mouseover)="zoom()">
 </div>
+<div>
+    <h4>Select Website to show the link</h4>
+    <select [(ngModel)]="websiteLink"  class="m-3">
+        <option value="https://www.w3schools.com/">w3schools</option>
+        <option value="https://www.javatpoint.com/">javatpoint</option>
+        <option value="">tutorialspoint</option>
+        <option value="">developermozilla</option>
+    </select>
+    <a id="website" [href]="websiteLink">CLICK HERE TO VISIT WEBSITE</a>
+</div>
+<!-- select the name of website from drop down, whichever website is selected, 
+    the link of that webiste must be added in href attribute of a tag 
+-->

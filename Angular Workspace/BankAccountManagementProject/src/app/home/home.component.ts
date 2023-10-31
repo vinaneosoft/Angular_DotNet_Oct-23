@@ -27,7 +27,6 @@ export class HomeComponent {
       console.log(this.interestRate);
       console.log(this.accountType);
     },2000); */
-  
   }// end
 
   showValues():void{
@@ -58,4 +57,10 @@ export class HomeComponent {
     this.imageObject.imgHeight+=200;
     this.imageObject.imgWidth+=200;
   }
+  zoomOut(){
+    this.imageObject.imgHeight=100;
+    this.imageObject.imgHeight=100;
+  }
+
+  websiteLink="https://www.w3schools.com/"
 }
