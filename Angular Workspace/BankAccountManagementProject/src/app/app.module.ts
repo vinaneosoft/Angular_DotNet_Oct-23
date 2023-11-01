@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { BankAccountComponent } from './bankaccount/bankaccount.component';
+import { OrderbyPipe } from './custompipes/orderby.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BankAccountComponent } from './bankaccount/bankaccount.component';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    BankAccountComponent // other declarations of components goes here
+    BankAccountComponent,
+    OrderbyPipe // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,

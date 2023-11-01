@@ -3,16 +3,16 @@
     <table [ngClass]="tableClassArray">
         <thead [ngClass]="theadClassObject">
             <tr>
-                <th>ACCOUNT NUMBER</th> <!-- view+development-->
-                <th>CUSTOMER ID</th>
-                <th>CUSTOMER NAME</th>
-                <th>BAlAnCE</th>
-                <th>ACCOUNT TYPE</th>
-                <th>ACCOUNT CREATED ON</th>
+                <th (click)="orderBy('accNum')">ACCOUNT NUMBER</th> <!-- view+development-->
+                <th (click)="orderBy('custId')">CUSTOMER ID</th>
+                <th (click)="orderBy('custName')">CUSTOMER NAME</th>
+                <th (click)="orderBy('accBalance')">BALANCE</th>
+                <th (click)="orderBy('accType')">ACCOUNT TYPE</th>
+                <th (click)="orderBy('accountDate')">ACCOUNT CREATED ON</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let account of accounts">
+            <tr *ngFor="let account of accounts | orderby : orderProperty">
                 <td>{{account.accNum}}</td>
                 <td>{{account.custId}}</td>
                 <td>{{account.custName}}</td>
