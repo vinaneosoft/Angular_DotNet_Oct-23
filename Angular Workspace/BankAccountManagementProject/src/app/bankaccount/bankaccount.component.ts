@@ -31,4 +31,10 @@ export class BankAccountComponent {
     this.h3StyleObject['background-color']='pink';
     this.h3StyleObject.color='yellow';
   }
+  tableClassArray=['table', 'table-bordered',"table-responsive",'table-warning','fontClass'];
+
+  thClassObject={
+    'bg-success':true,
+    'text-danger':false
+  }
 }
