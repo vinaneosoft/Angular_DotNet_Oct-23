@@ -1,5 +1,10 @@
 export class BankAccount {
-    constructor(private accountNumber=0,private customerId=0,private customerName="AAA",private accountBalance=0,private accountType="savings")
+    constructor(private accountNumber=0,
+        private customerId=0,
+        private customerName="AAA",
+        private accountBalance=0,
+        private accountType="savings",
+        private accountCreateDate=new Date())
     {}
     get accNum(){
         return this.accountNumber;
@@ -15,6 +20,12 @@ export class BankAccount {
     }
     get custName(){
         return this.customerName;
+    }
+    get accountDate(){
+        return this.accountCreateDate;
+    }
+    set accountDate(accountCreateDate:Date){
+        this.accountCreateDate=accountCreateDate;
     }
     set accNum(accountNumber:number){
         this.accountNumber=accountNumber
