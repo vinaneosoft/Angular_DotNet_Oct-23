@@ -8,7 +8,7 @@ import { BankAccount } from '../classes/bank-account';
 export class BankAccountComponent {
 
   accounts:BankAccount[]=[
-    new BankAccount(22222222,1111,'Karan patil',45000.789,"current", new Date('12 Jun, 2000')),
+    new BankAccount(22222222,1111,'Karan patil',45000.789,"current", new Date('1 Jun, 2000')),
     new BankAccount(56565656,4444,'Ritesh Shaha',150000.5646,"savings",  new Date('11 Jun, 2000')),
     new BankAccount(23232323,5757,'sameera Triveni',95000,"current", new Date('12 Aug, 2004')),
     new BankAccount(12121212,7676,'karan kumar',248000.11,"salary", new Date('21 Dec, 1999')),

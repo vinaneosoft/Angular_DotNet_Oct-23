@@ -18,7 +18,7 @@
                 <td>{{account.custName}}</td>
                 <td>{{account.accBalance}}</td>
                 <td>{{account.accType}}</td>
-                <td>{{account.accountDate}}</td>
+                <td>{{account.accountDate | date: 'medium'}}</td>
             </tr>
         </tbody>
     </table>
@@ -48,7 +48,27 @@
                 <td>{{account.accBalance | currency}}</td><!-- thousand seperator, $ currency, number rounded to exact 2 deci digits-->
                 <td>{{account.accBalance | currency : 'INR':true:'.1-1'}}</td> <!-- symbol: true, code: false-->
                 <td>{{account.accType | uppercase }}</td>
-                <td>{{account.accountDate}}</td>
+                <td>{{account.accountDate | date}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table [ngClass]="tableClassArray">
+        <thead [ngClass]="theadClassObject">
+            <tr>
+                <th>ACCOUNT CREATED ON</th> <!-- view+development-->
+                <th>ACCOUNT CREATED ON</th>
+                <th>ACCOUNT CREATED ON</th>
+                <th>ACCOUNT CREATED ON</th>
+                <th>ACCOUNT CREATED ON</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td>{{account.accountDate | date : 'short'}}</td>
+                <td>{{account.accountDate | date : 'medium'}}</td>
+                <td>{{account.accountDate | date : 'long'}}</td>
+                <td>{{account.accountDate | date : 'full'}}</td>
+                <td>{{account.accountDate | date : 'dd-MMMM-yyyy'}}</td>
             </tr>
         </tbody>
     </table>
