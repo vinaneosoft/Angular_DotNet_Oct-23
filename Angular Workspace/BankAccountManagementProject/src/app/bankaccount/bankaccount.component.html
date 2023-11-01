@@ -1,9 +1,12 @@
 <section [ngStyle]="{border:'2px double blue'}">
-    <h3 [ngStyle]="h3StyleObject">BANK ACCOUNTS</h3>
+    <h3 [ngStyle]="h3StyleObject">BANK ACCOUNTS DETAILS</h3>
     <table [ngClass]="tableClassArray">
-        <thead >
+        <thead [ngClass]="theadClassObject">
             <tr>
-                <th [ngClass]="thClassObject">ACCOUNT NUMBER</th>
+                <th>ACCOUNT NUMBER</th>
+                <th>CUSTOMER ID</th>
+                <th>BALANCE</th>
+                <th>ACCOUNT TYPE</th>
             </tr>
         </thead>
         <tbody>
@@ -16,3 +19,4 @@
         </tbody>
     </table>
 </section>
+
