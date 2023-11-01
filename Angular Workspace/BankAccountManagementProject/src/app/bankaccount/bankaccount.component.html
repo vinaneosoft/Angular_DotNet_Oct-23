@@ -30,6 +30,7 @@
                 <th>BALANCE</th>
                 <th>BALANCE</th>
                 <th>BALANCE</th>
+                <th>BALANCE</th>
                 <th>ACCOUNT TYPE</th>
             </tr>
         </thead>
@@ -42,6 +43,7 @@
                 <td>{{account.accBalance | number}}</td> <!-- thousand seperator, number rounded up to 3 dec digits-->
                 <td>{{account.accBalance | number : '5.0-0'}}</td> <!-- '.2-2' '.2-4'-->
                 <td>{{account.accBalance | currency}}</td><!-- thousand seperator, $ currency, number rounded to exact 2 deci digits-->
+                <td>{{account.accBalance | currency : 'INR':true:'.1-1'}}</td> <!-- symbol: true, code: false-->
                 <td>{{account.accType | uppercase }}</td>
             </tr>
         </tbody>
