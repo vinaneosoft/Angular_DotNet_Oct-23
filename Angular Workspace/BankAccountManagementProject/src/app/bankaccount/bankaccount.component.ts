@@ -14,6 +14,21 @@ export class BankAccountComponent {
     new BankAccount(12121212,7676,48000,"salary"),
     new BankAccount(65656565,4545,78000,"savings")
   ]
-
-
+   //css key value pairs or js key value pairs
+    //background-color   : backgroundColor
+    //font-size  : fontSize
+    //color : color
+  h3StyleObject={
+    'background-color':'yellow',
+     color:'blueviolet',
+     textAlign:'center'
+  }
+  constructor(){
+    setTimeout(() => this.changeStyle(), 4000);
+  }
+  
+  changeStyle(){
+    this.h3StyleObject['background-color']='pink';
+    this.h3StyleObject.color='yellow';
+  }
 }
