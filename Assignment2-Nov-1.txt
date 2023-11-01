@@ -1,0 +1,2 @@
+2. 
+While sorting, if user clicks on heading sorting should happen according to that property but if user clicks on same heading again sorting must be reverse of current sorting (asc, desc, asc, desc ....)
