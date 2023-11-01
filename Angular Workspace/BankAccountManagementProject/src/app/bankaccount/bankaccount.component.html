@@ -3,8 +3,32 @@
     <table [ngClass]="tableClassArray">
         <thead [ngClass]="theadClassObject">
             <tr>
-                <th>ACCOUNT NUMBER</th>
+                <th>ACCOUNT NUMBER</th> <!-- view+development-->
                 <th>CUSTOMER ID</th>
+                <th>CUSTOMER NAME</th>
+                <th>BAlAnCE</th>
+                <th>ACCOUNT TYPE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td>{{account.accNum}}</td>
+                <td>{{account.custId}}</td>
+                <td>{{account.custName}}</td>
+                <td>{{account.accBalance}}</td>
+                <td>{{account.accType}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table [ngClass]="tableClassArray">
+        <thead [ngClass]="theadClassObject">
+            <tr>
+                <th>ACCOUNT NUMBER</th> <!-- view+development-->
+                <th>CUSTOMER ID</th>
+                <th>CUSTOMER NAME</th>
+                <th>CUSTOMER NAME</th>
+                <th>BALANCE</th>
+                <th>BALANCE</th>
                 <th>BALANCE</th>
                 <th>ACCOUNT TYPE</th>
             </tr>
@@ -13,8 +37,12 @@
             <tr *ngFor="let account of accounts">
                 <td>{{account.accNum}}</td>
                 <td>{{account.custId}}</td>
-                <td>{{account.accBalance}}</td>
-                <td>{{account.accType}}</td>
+                <td>{{account.custName | titlecase}}</td>
+                <td>{{account.custName | slice : 0 : 5}}</td>
+                <td>{{account.accBalance | number}}</td> <!-- thousand seperator, number rounded up to 3 dec digits-->
+                <td>{{account.accBalance | number : '5.0-0'}}</td> <!-- '.2-2' '.2-4'-->
+                <td>{{account.accBalance | currency}}</td><!-- thousand seperator, $ currency, number rounded to exact 2 deci digits-->
+                <td>{{account.accType | uppercase }}</td>
             </tr>
         </tbody>
     </table>
