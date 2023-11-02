@@ -23,7 +23,7 @@ export class BankAccountComponent {
       accNum:new FormControl("",Validators.required),
       custId:new FormControl("",Validators.required),
       custName:new FormControl("",Validators.required),
-      accBalance:new FormControl(1000,[Validators.required, Validators.min(1000)]),
+      accBalance:new FormControl(1000,[Validators.required, Validators.min(1000), Validators.max(50000000)]),
       accType:new FormControl("current"),
       accountDate:new FormControl(""),
       profilePic:new FormControl(""),

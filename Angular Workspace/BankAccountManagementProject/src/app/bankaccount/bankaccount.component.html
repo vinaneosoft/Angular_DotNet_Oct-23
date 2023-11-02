@@ -39,10 +39,12 @@
             <div class="mb-3">
                 <label for="bal" class="form-label">Current Balance</label>
                 <input type="number" class="form-control" id="bal" formControlName="accBalance">
+                <div id="balanceHelp" class="form-text">Do not put 5 crore or more while creating new account. You may deposit later</div>
                 <div *ngIf="accBalance?.touched" class="text-danger">
                     <i *ngIf="accBalance?.hasError('required')"><small>This field is required</small></i>
                     <i *ngIf="accBalance?.hasError('min')"><small>Please add min 1000 rs as balance</small></i>
-                  </div>
+                    <i *ngIf="accBalance?.hasError('max')"><small>Not allowed to add 5 crore or more for new account initially</small></i>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="acctype" class="form-label">Type of Account</label>   
