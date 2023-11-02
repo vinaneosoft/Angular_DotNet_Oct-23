@@ -43,4 +43,9 @@ export class BankAccountComponent {
   orderBy(property:string){
     this.orderProperty=property;
   }
+  headingFromChild="";
+  fromChild(data:string){
+   this.headingFromChild=data;
+    
+  }
 }

@@ -1,8 +1,8 @@
 <section [ngStyle]="{border:'2px double blue'}">
-    <h3 [ngStyle]="h3StyleObject">BANK ACCOUNTS DETAILS</h3>
+    <h3 [ngStyle]="h3StyleObject">{{headingFromChild}}</h3>
     <div class="row">
         <div class="col-md-2" *ngFor="let account of accounts" >
-            <app-account-card [bankAccount]="account"></app-account-card>
+            <app-account-card [bankAccount]="account"  (eventEmitter)="fromChild($event)"></app-account-card>
         </div>
     </div>
    
