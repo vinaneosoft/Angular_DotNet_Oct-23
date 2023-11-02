@@ -11,25 +11,38 @@
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
               <input type="number" class="form-control" id="accno" formControlName="accNum">
-              <div *ngIf="accNo?.touched" class="text-danger">
-                <i *ngIf="accNo?.hasError('required')"><small>This field is required</small></i>
+              <div *ngIf="accNum?.touched" class="text-danger">
+                <i *ngIf="accNum?.hasError('required')"><small>This field is required</small></i>
               </div>
             </div>
             <div class="mb-3">
               <label for="custid" class="form-label">Customer ID</label>
               <input type="number" class="form-control" id="custid" formControlName="custId">
+              <div *ngIf="custId?.touched" class="text-danger">
+                <i *ngIf="custId?.hasError('required')"><small>This field is required</small></i>
+              </div>
             </div>
             <div class="mb-3">
                 <label for="custname" class="form-label">Customer Name</label>
                 <input type="text" class="form-control" id="custname" formControlName="custName">
+                <div *ngIf="custName?.touched" class="text-danger">
+                    <i *ngIf="custName?.hasError('required')"><small>This field is required</small></i>
+                  </div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email Id</label>
                 <input type="email" class="form-control" id="email" formControlName="custEmail">
+                <div *ngIf="custEmail?.touched" class="text-danger">
+                    <i *ngIf="custEmail?.hasError('required')"><small>This field is required</small></i>
+                  </div>
             </div>
             <div class="mb-3">
                 <label for="bal" class="form-label">Current Balance</label>
                 <input type="number" class="form-control" id="bal" formControlName="accBalance">
+                <div *ngIf="accBalance?.touched" class="text-danger">
+                    <i *ngIf="accBalance?.hasError('required')"><small>This field is required</small></i>
+                    <i *ngIf="accBalance?.hasError('min')"><small>Please add min 1000 rs as balance</small></i>
+                  </div>
             </div>
             <div class="mb-3">
                 <label for="acctype" class="form-label">Type of Account</label>   
@@ -46,17 +59,23 @@
             <div class="mb-3">
                 <label for="pass" class="form-label">Set Password</label>
                 <input type="password" class="form-control" id="pass" formControlName="custPass">
+                <div *ngIf="custPass?.touched" class="text-danger">
+                    <i *ngIf="custPass?.hasError('required')"><small>This field is required</small></i>
+                  </div>
             </div>
             <div class="mb-3">
                 <label for="cpass" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="cpass" formControlName="confirmPass">
+                <div *ngIf="confirmPass?.touched" class="text-danger">
+                    <i *ngIf="confirmPass?.hasError('required')"><small>This field is required</small></i>
+                  </div>
             </div>
             <div class="mb-3">
                 <label for="pic" class="form-label">Profile Pic</label>
                 <input type="file" class="form-control" id="pic" formControlName="profilePic">
             </div>
-            <input type="submit" class="btn btn-primary" value="CREATE ACCOUNT">
-            <input type="reset" class="btn btn-primary" value="RESET">
+            <input type="submit" class="btn btn-primary m-2" value="CREATE ACCOUNT" [disabled]="accountInputForm.invalid">
+            <input type="reset" class="btn btn-primary m-2" value="RESET">
           </form>
     </section>
 

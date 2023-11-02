@@ -21,21 +21,40 @@ export class BankAccountComponent {
     setTimeout(() => this.changeStyle(), 4000);
     this.accountInputForm=new FormGroup({
       accNum:new FormControl("",Validators.required),
-      custId:new FormControl(""),
-      custName:new FormControl(""),
-      accBalance:new FormControl(1000),
+      custId:new FormControl("",Validators.required),
+      custName:new FormControl("",Validators.required),
+      accBalance:new FormControl(1000,[Validators.required, Validators.min(1000)]),
       accType:new FormControl("current"),
       accountDate:new FormControl(""),
       profilePic:new FormControl(""),
-      custEmail:new FormControl("@gmail.com"),
-      custPass:new FormControl(""),
-      confirmPass:new FormControl("")
+      custEmail:new FormControl("@gmail.com",Validators.required),
+      custPass:new FormControl("",Validators.required),
+      confirmPass:new FormControl("",Validators.required)
     });
 
   }
-   get accNo(){
+   get accNum(){
     return this.accountInputForm.get('accNum');
    }
+   get custId(){
+    return this.accountInputForm.get('custId');
+   }
+   get custName(){
+    return this.accountInputForm.get('custName');
+   }
+   get accBalance(){
+    return this.accountInputForm.get('accBalance');
+   }
+   get custEmail(){
+    return this.accountInputForm.get('custEmail');
+   }
+   get custPass(){
+    return this.accountInputForm.get('custPass');
+   }
+   get confirmPass(){
+    return this.accountInputForm.get('confirmPass');
+   }
+
 
 
    //css key value pairs or js key value pairs
@@ -78,9 +97,9 @@ export class BankAccountComponent {
 
     logic 
 
-    if(notEmpty)
+    if(balance>=1000)
       return null;
     else
-      return {required:true}
+      return {min:true}  validation fails
    }
 */
