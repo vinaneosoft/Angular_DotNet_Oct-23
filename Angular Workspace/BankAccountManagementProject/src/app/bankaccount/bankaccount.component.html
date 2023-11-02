@@ -1,5 +1,12 @@
 <section [ngStyle]="{border:'2px double blue'}">
     <h3 [ngStyle]="h3StyleObject">BANK ACCOUNTS DETAILS</h3>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let account of accounts" >
+            <app-account-card [bankAccount]="account"></app-account-card>
+        </div>
+    </div>
+   
+
     <table [ngClass]="tableClassArray">
         <thead [ngClass]="theadClassObject">
             <tr>
