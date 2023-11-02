@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BankAccount } from '../classes/bank-account';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-bankaccount',
   templateUrl: './bankaccount.component.html',
@@ -20,7 +20,7 @@ export class BankAccountComponent {
   constructor(){
     setTimeout(() => this.changeStyle(), 4000);
     this.accountInputForm=new FormGroup({
-      accNum:new FormControl(""),
+      accNum:new FormControl("",Validators.required),
       custId:new FormControl(""),
       custName:new FormControl(""),
       accBalance:new FormControl(1000),
@@ -33,7 +33,11 @@ export class BankAccountComponent {
     });
 
   }
-  
+   get accNo(){
+    return this.accountInputForm.get('accNum');
+   }
+
+
    //css key value pairs or js key value pairs
     //background-color   : backgroundColor
     //font-size  : fontSize
@@ -67,3 +71,16 @@ export class BankAccountComponent {
     console.log(this.accountInputForm.value);
   }
 }
+
+
+/*
+   checkRequired(){
+
+    logic 
+
+    if(notEmpty)
+      return null;
+    else
+      return {required:true}
+   }
+*/

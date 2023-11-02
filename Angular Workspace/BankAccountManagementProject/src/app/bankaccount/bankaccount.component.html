@@ -10,11 +10,14 @@
         <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAcountDetails()">
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
-              <input type="number" class="form-control" id="accno" formControlName="accNum" required>
+              <input type="number" class="form-control" id="accno" formControlName="accNum">
+              <div *ngIf="accNo?.touched" class="text-danger">
+                <i *ngIf="accNo?.hasError('required')"><small>This field is required</small></i>
+              </div>
             </div>
             <div class="mb-3">
               <label for="custid" class="form-label">Customer ID</label>
-              <input type="number" class="form-control" id="custid" formControlName="custId" required>
+              <input type="number" class="form-control" id="custid" formControlName="custId">
             </div>
             <div class="mb-3">
                 <label for="custname" class="form-label">Customer Name</label>
