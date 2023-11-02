@@ -1,0 +1,3 @@
+Implement Entity cards in project also that we learned in session (data sharing)
+
+Implement Reactive form for project entity input
