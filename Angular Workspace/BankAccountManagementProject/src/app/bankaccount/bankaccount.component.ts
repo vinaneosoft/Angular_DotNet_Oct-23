@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { BankAccount } from '../classes/bank-account';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-bankaccount',
   templateUrl: './bankaccount.component.html',
   styleUrls: ['./bankaccount.component.css']
 })
 export class BankAccountComponent {
+  accountInputForm:FormGroup=new FormGroup({});
 
   accounts:BankAccount[]=[
     new BankAccount(22222222,1111,'Karan patil',45000.789,"current", new Date('1 Jun, 2000'),"assets/Images/1111.jpg"),
@@ -15,6 +17,23 @@ export class BankAccountComponent {
     new BankAccount(65656565,4545,'Krupa Singh',78000.7,"savings", new Date('30 March, 2003'),"assets/Images/4545.jpg"),
     new BankAccount(90909090,6666,'Baban Singh',5000.7,"savings", new Date('17 March, 2003'),"assets/Images/6666.jpg"),
   ]
+  constructor(){
+    setTimeout(() => this.changeStyle(), 4000);
+    this.accountInputForm=new FormGroup({
+      accNum:new FormControl(""),
+      custId:new FormControl(""),
+      custName:new FormControl(""),
+      accBalance:new FormControl(1000),
+      accType:new FormControl("current"),
+      accountDate:new FormControl(""),
+      profilePic:new FormControl(""),
+      custEmail:new FormControl("@gmail.com"),
+      custPass:new FormControl(""),
+      confirmPass:new FormControl("")
+    });
+
+  }
+  
    //css key value pairs or js key value pairs
     //background-color   : backgroundColor
     //font-size  : fontSize
@@ -24,10 +43,7 @@ export class BankAccountComponent {
      color:'blueviolet',
      textAlign:'center'
   }
-  constructor(){
-    setTimeout(() => this.changeStyle(), 4000);
-  }
-  
+ 
   changeStyle(){
     this.h3StyleObject['background-color']='pink';
     this.h3StyleObject.color='yellow';
@@ -46,5 +62,8 @@ export class BankAccountComponent {
   fromChild(data:string){
    this.headingFromChild=data;
     
+  }
+  collectAcountDetails(){
+    console.log(this.accountInputForm.value);
   }
 }

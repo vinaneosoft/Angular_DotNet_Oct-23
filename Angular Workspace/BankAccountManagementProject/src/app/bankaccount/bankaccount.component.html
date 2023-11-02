@@ -5,9 +5,56 @@
                 <app-account-card [bankAccount]="account"  (eventEmitter)="fromChild($event)"></app-account-card>
         </div>
     </div>
-    <section>
-        <h3>ACCOUNT INPUT FORM (Bootstrap Form)</h3>
-        
+    <section class="m-5 border border-3 border-primary">
+        <h3 class="bg-success text-center">ACCOUNT INPUT FORM</h3>
+        <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAcountDetails()">
+            <div class="mb-3">
+              <label for="accno" class="form-label">Account Number</label>
+              <input type="number" class="form-control" id="accno" formControlName="accNum" required>
+            </div>
+            <div class="mb-3">
+              <label for="custid" class="form-label">Customer ID</label>
+              <input type="number" class="form-control" id="custid" formControlName="custId" required>
+            </div>
+            <div class="mb-3">
+                <label for="custname" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="custname" formControlName="custName">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Id</label>
+                <input type="email" class="form-control" id="email" formControlName="custEmail">
+            </div>
+            <div class="mb-3">
+                <label for="bal" class="form-label">Current Balance</label>
+                <input type="number" class="form-control" id="bal" formControlName="accBalance">
+            </div>
+            <div class="mb-3">
+                <label for="acctype" class="form-label">Type of Account</label>   
+                <select id="acctype" formControlName="accType">
+                    <option value="savings">SAVINGS</option>
+                    <option value="salary">SALARY</option>
+                    <option value="current">CURRENT</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="accdate" class="form-label">Account Created On</label>
+                <input type="datetime-local" class="form-control" id="accdate" formControlName="accountDate">
+            </div>
+            <div class="mb-3">
+                <label for="pass" class="form-label">Set Password</label>
+                <input type="password" class="form-control" id="pass" formControlName="custPass">
+            </div>
+            <div class="mb-3">
+                <label for="cpass" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="cpass" formControlName="confirmPass">
+            </div>
+            <div class="mb-3">
+                <label for="pic" class="form-label">Profile Pic</label>
+                <input type="file" class="form-control" id="pic" formControlName="profilePic">
+            </div>
+            <input type="submit" class="btn btn-primary" value="CREATE ACCOUNT">
+            <input type="reset" class="btn btn-primary" value="RESET">
+          </form>
     </section>
 
     <table [ngClass]="tableClassArray">

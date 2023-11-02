@@ -1,5 +1,6 @@
 export class BankAccount {
-    constructor(private accountNumber=0,
+    constructor(
+        private accountNumber=0,
         private customerId=0,
         private customerName="AAA",
         private accountBalance=0,
