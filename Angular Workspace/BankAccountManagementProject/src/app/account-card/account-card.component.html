@@ -1,16 +1,15 @@
 <div class="card text-bg-success">
-    <img src="..." class="card-img-top" alt="...">
+    <img [src]="bankAccount.profilePic" class="card-img-top img-fluid" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title"><b class="text-danger">{{bankAccount.custName}}</b></h5>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"><b>Customer Id: </b>{{bankAccount.custId}}</li>
-      <li class="list-group-item"><b>Account Number: </b>{{bankAccount.accNum}}</li>
-      <li class="list-group-item"><b>Current Balance: </b>{{bankAccount.accBalance}}</li>
+      <li class="list-group-item">Customer Id: <b>{{bankAccount.custId}}</b></li>
+      <li class="list-group-item">Account Number: <b>{{bankAccount.accNum}}</b></li>
+      <li class="list-group-item">Current Balance: <b>{{bankAccount.accBalance}}</b></li>
+      <li class="list-group-item">Account Created on <b>{{bankAccount.accountDate | date: 'medium'}}</b></li>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a href="#" class="card-link">More Details</a>
     </div>
 </div>

@@ -4,7 +4,10 @@ export class BankAccount {
         private customerName="AAA",
         private accountBalance=0,
         private accountType="savings",
-        private accountCreateDate=new Date())
+        private accountCreateDate=new Date(),
+        private customerProfilePic=""
+        )
+        
     {}
     get accNum(){
         return this.accountNumber;
@@ -26,6 +29,12 @@ export class BankAccount {
     }
     set accountDate(accountCreateDate:Date){
         this.accountCreateDate=accountCreateDate;
+    }
+    get profilePic(){
+        return this.customerProfilePic;
+    }
+    set profilePic(customerProfilePic:string){
+        this.customerProfilePic=customerProfilePic;
     }
     set accNum(accountNumber:number){
         this.accountNumber=accountNumber
