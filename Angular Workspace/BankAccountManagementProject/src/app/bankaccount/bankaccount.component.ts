@@ -93,9 +93,10 @@ export class BankAccountComponent {
   collectAcountDetails(){
     console.log(this.accountInputForm.value);
   }
-
+  array=['border','border-2','border-danger'];
   // custom validation function
 }
+
 
 // function
 
