@@ -7,7 +7,7 @@
     </div>
     <section class="m-5 border border-3 border-primary">
         <h3 class="bg-success text-center">ACCOUNT INPUT FORM</h3>
-        <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAcountDetails()">
+        <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAccountDetails()">
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
               <input type="number" class="form-control" id="accno" formControlName="accNum" >
@@ -84,10 +84,10 @@
                     <i *ngIf="accountInputForm?.hasError('passmatch')"><small>Both passwords must match</small></i>
                 </div>
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="pic" class="form-label">Profile Pic</label>
                 <input type="file" class="form-control" id="pic" formControlName="profilePic">
-            </div>
+            </div> -->
             <input type="submit" class="btn btn-primary m-2" value="CREATE ACCOUNT" [disabled]="accountInputForm.invalid">
             <input type="reset" class="btn btn-primary m-2" value="RESET">
           </form>

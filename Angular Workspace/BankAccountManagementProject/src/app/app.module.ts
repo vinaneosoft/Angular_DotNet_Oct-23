@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BankAccountComponent } from './bankaccount/bankaccount.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { AccountCardComponent } from './account-card/account-card.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AccountCardComponent } from './account-card/account-card.component';
     HomeComponent,
     BankAccountComponent,
     OrderbyPipe,
-    AccountCardComponent // other declarations of components,pipes goes here
+    AccountCardComponent,
+    LoginComponent // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,

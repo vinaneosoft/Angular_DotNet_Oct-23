@@ -95,7 +95,7 @@ export class BankAccountComponent {
    this.headingFromChild=data;
     
   }
-  collectAcountDetails(){
+  collectAccountDetails(){
     console.log(this.accountInputForm.value);
     let bankAccount=new BankAccount();
   //  this.bankAccount=this.accountInputForm.value;  // FormGroup : more values, bankAcount : less
@@ -105,8 +105,9 @@ export class BankAccountComponent {
     bankAccount.accountDate=this.accountInputForm.value.accountDate;
     bankAccount.custId=this.accountInputForm.value.custId;
     bankAccount.custName=this.accountInputForm.value.custName;
+    bankAccount.profilePic="assets/Images/noimage.jpg";
     this.accounts.push(bankAccount);
-   
+
     
  //   let bankAccount=new BankAccount(this.accNum?.value, this.custId?.value,);
   }
