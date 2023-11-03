@@ -61,14 +61,20 @@
             </div>
             <div class="mb-3">
                 <label for="pass" class="form-label">Set Password</label>
-                <input type="password" class="form-control" id="pass" formControlName="custPass">
+                <input type="text" class="form-control" id="pass" formControlName="custPass">
+                <div id="passHelp" class="form-text">
+                    Password must contain atleast one capital letter, small letter, number, special character().
+                    Password must be 4 to 9 characters long
+                </div>
                 <div *ngIf="custPass?.touched" class="text-danger">
                     <i *ngIf="custPass?.hasError('required')"><small>This field is required</small></i>
-                  </div>
+                    <i *ngIf="custPass?.hasError('pattern')"><small>Password must match requirements</small></i>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="cpass" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="cpass" formControlName="confirmPass">
+
                 <div *ngIf="confirmPass?.touched" class="text-danger">
                     <i *ngIf="confirmPass?.hasError('required')"><small>This field is required</small></i>
                   </div>
