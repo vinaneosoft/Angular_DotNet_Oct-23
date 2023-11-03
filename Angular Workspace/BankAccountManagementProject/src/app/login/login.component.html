@@ -1,13 +1,13 @@
-<section>
-    <h3>LOGIN FORM</h3>
-    <form>
+<section class="my-2">
+    <h3 class="text-center">LOGIN FORM</h3>
+    <form (submit)="login(adminLoginForm)" class="p-2 bg-warning"  #adminLoginForm="ngForm">
         <div class="mb-3">
           <label for="uname" class="form-label">UserName</label>
-          <input type="text" class="form-control" id="uname">
+          <input type="text" class="form-control" id="uname" name="username" ngModel>
         </div>
         <div class="mb-3">
           <label for="pass" class="form-label">Password</label>
-          <input type="password" class="form-control" id="pass">
+          <input type="password" class="form-control" id="pass" name="password" ngModel>
         </div>
         <input type="submit" class="btn btn-primary m-1" value="LOGIN">
         <input type="reset" class="btn btn-primary m-1" value="RESET">
