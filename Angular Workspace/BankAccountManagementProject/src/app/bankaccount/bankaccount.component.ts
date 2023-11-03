@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BankAccount } from '../classes/bank-account';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CustomValidators } from '../classes/custom-validator';
 @Component({
   selector: 'app-bankaccount',
   templateUrl: './bankaccount.component.html',
@@ -32,8 +33,9 @@ export class BankAccountComponent {
       custEmail:new FormControl("@gmail.com",[Validators.required, Validators.email]),
       custPass:new FormControl("",[Validators.required,Validators.pattern(this.passwordPattern)]),
       confirmPass:new FormControl("",Validators.required)
-    });
-
+    }, CustomValidators.passwordValidation);  // custom validation method, must match built validation method
+    // FormGroup object automatically passed to custom validation function
+// on FormControl, FormGroup
   }
    get accNum(){
     return this.accountInputForm.get('accNum');
@@ -91,7 +93,12 @@ export class BankAccountComponent {
   collectAcountDetails(){
     console.log(this.accountInputForm.value);
   }
+
+  // custom validation function
 }
+
+// function
+
 
 
 /*
