@@ -34,7 +34,8 @@
                 <input type="email" class="form-control" id="email" formControlName="custEmail">
                 <div *ngIf="custEmail?.touched" class="text-danger">
                     <i *ngIf="custEmail?.hasError('required')"><small>This field is required</small></i>
-                  </div>
+                    <i *ngIf="custEmail?.hasError('email')"><small>Please enter valid email id</small></i>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="bal" class="form-label">Current Balance</label>

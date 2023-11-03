@@ -27,7 +27,7 @@ export class BankAccountComponent {
       accType:new FormControl("current"),
       accountDate:new FormControl(""),
       profilePic:new FormControl(""),
-      custEmail:new FormControl("@gmail.com",Validators.required),
+      custEmail:new FormControl("@gmail.com",[Validators.required, Validators.email]),
       custPass:new FormControl("",Validators.required),
       confirmPass:new FormControl("",Validators.required)
     });
