@@ -8,9 +8,10 @@ import { CustomValidators } from '../classes/custom-validator';
   styleUrls: ['./bankaccount.component.css']
 })
 export class BankAccountComponent {
+
   accountInputForm:FormGroup=new FormGroup({});
   passwordPattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{5,15}$";
-  namePattern="^[A-Za-z]*";
+  namePattern="^[A-Za-z ]*";
 
   accounts:BankAccount[]=[
     new BankAccount(22222222,1111,'Karan patil',45000.789,"current", new Date('1 Jun, 2000'),"assets/Images/1111.jpg"),
@@ -38,16 +39,16 @@ export class BankAccountComponent {
 // on FormControl, FormGroup
   }
    get accNum(){
-    return this.accountInputForm.get('accNum');
+    return this.accountInputForm.get('accountNumber');
    }
    get custId(){
-    return this.accountInputForm.get('custId');
+    return this.accountInputForm.get('customerId');
    }
    get custName(){
-    return this.accountInputForm.get('custName');
+    return this.accountInputForm.get('customerName');
    }
    get accBalance(){
-    return this.accountInputForm.get('accBalance');
+    return this.accountInputForm.get('accountBalance');
    }
    get custEmail(){
     return this.accountInputForm.get('custEmail');
@@ -58,9 +59,13 @@ export class BankAccountComponent {
    get confirmPass(){
     return this.accountInputForm.get('confirmPass');
    }
+   get accType(){
+    return this.accountInputForm.get('accType');
+   }
 
-
-
+   get accountDate(){
+    return this.accountInputForm.get('accountDate');
+   }
    //css key value pairs or js key value pairs
     //background-color   : backgroundColor
     //font-size  : fontSize
@@ -92,6 +97,18 @@ export class BankAccountComponent {
   }
   collectAcountDetails(){
     console.log(this.accountInputForm.value);
+    let bankAccount=new BankAccount();
+  //  this.bankAccount=this.accountInputForm.value;  // FormGroup : more values, bankAcount : less
+    bankAccount.accNum=this.accountInputForm.value.accNum;
+    bankAccount.accBalance=this.accountInputForm.value.accBalance;
+    bankAccount.accType=this.accountInputForm.value.accType;
+    bankAccount.accountDate=this.accountInputForm.value.accountDate;
+    bankAccount.custId=this.accountInputForm.value.custId;
+    bankAccount.custName=this.accountInputForm.value.custName;
+    this.accounts.push(bankAccount);
+   
+    
+ //   let bankAccount=new BankAccount(this.accNum?.value, this.custId?.value,);
   }
   array=['border','border-2','border-danger'];
   // custom validation function

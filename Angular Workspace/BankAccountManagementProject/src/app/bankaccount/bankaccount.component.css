@@ -11,15 +11,15 @@ input.ng-untouched{
 input.ng-touched{
     background-color: aqua;
 }
-input.ng-pristine{
+/* input.ng-pristine{
     border: 2px solid darkmagenta;
 }
 input.ng-dirty{
     border: 2px dashed darkmagenta;
-}
-input.ng-valid, form.ng-valid{
+} */
+/* input.ng-valid, form.ng-valid{
     border: 2px solid green;
-}
+} */
 input.ng-invalid, form.ng-invalid{
     border: 2px solid red;
 }

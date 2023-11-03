@@ -10,7 +10,7 @@
         <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAcountDetails()">
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
-              <input type="number" class="form-control" id="accno" formControlName="accNum">
+              <input type="number" class="form-control" id="accno" formControlName="accNum" >
               <div *ngIf="accNum?.touched" class="text-danger">
                 <i *ngIf="accNum?.hasError('required')"><small>This field is required</small></i>
               </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="mb-3">
                 <label for="cpass" class="form-label">Confirm Password</label>
-                <input type="text" class="form-control" id="cpass" formControlName="confirmPass" [ngStyle]="confirmPass!.touched && accountInputForm!.hasError('passmatch') ? {border:'2px solid red'} : {border:'2px solid green'}">
+                <input type="text" class="form-control" id="cpass" formControlName="confirmPass" [ngStyle]="confirmPass!.touched && accountInputForm!.hasError('passmatch') ? {border:'2px solid red'} : {}">
 
                 <div *ngIf="confirmPass?.touched" class="text-danger">
                     <i *ngIf="confirmPass?.hasError('required')"><small>This field is required</small></i>
