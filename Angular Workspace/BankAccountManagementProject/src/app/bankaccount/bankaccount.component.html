@@ -77,7 +77,7 @@
             </div>
             <div class="mb-3">
                 <label for="cpass" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="cpass" formControlName="confirmPass">
+                <input type="text" class="form-control" id="cpass" formControlName="confirmPass">
 
                 <div *ngIf="confirmPass?.touched" class="text-danger">
                     <i *ngIf="confirmPass?.hasError('required')"><small>This field is required</small></i>
