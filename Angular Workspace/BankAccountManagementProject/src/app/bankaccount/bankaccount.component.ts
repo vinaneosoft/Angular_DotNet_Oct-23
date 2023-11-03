@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class BankAccountComponent {
   accountInputForm:FormGroup=new FormGroup({});
   passwordPattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{5,15}$";
-
+  namePattern="^[A-Za-z]*";
 
   accounts:BankAccount[]=[
     new BankAccount(22222222,1111,'Karan patil',45000.789,"current", new Date('1 Jun, 2000'),"assets/Images/1111.jpg"),
@@ -24,7 +24,7 @@ export class BankAccountComponent {
     this.accountInputForm=new FormGroup({
       accNum:new FormControl("",Validators.required),
       custId:new FormControl("",Validators.required),
-      custName:new FormControl("",Validators.required),
+      custName:new FormControl("",[Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2),Validators.maxLength(50)]),
       accBalance:new FormControl(1000,[Validators.required, Validators.min(1000), Validators.max(50000000)]),
       accType:new FormControl("current"),
       accountDate:new FormControl(""),

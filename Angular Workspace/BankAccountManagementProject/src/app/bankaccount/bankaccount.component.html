@@ -27,7 +27,11 @@
                 <input type="text" class="form-control" id="custname" formControlName="custName">
                 <div *ngIf="custName?.touched" class="text-danger">
                     <i *ngIf="custName?.hasError('required')"><small>This field is required</small></i>
-                  </div>
+                    <i *ngIf="custName?.hasError('pattern')"><small>Kindly put only alphabets</small></i>
+                    <i *ngIf="custName?.hasError('minlength') || custName?.hasError('maxlength')">
+                        <small> Kindly put 2 to 50 Alphabets</small>
+                    </i>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email Id</label>
@@ -77,7 +81,7 @@
 
                 <div *ngIf="confirmPass?.touched" class="text-danger">
                     <i *ngIf="confirmPass?.hasError('required')"><small>This field is required</small></i>
-                  </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="pic" class="form-label">Profile Pic</label>
