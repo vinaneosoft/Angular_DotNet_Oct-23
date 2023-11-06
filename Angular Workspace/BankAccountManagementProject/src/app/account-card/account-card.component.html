@@ -10,6 +10,6 @@
       <li class="list-group-item">Account Created on <b>{{bankAccount.accountDate | date: 'medium'}}</b></li>
     </ul>
     <div class="card-body">
-      <a [routerLink]="['/branchdetails', bankAccount.accNum]" class="card-link">Branch Details</a>
+      <a [routerLink]="['/branchdetails', bankAccount.accNum,bankAccount.custId ]" class="card-link">Branch Details</a>
     </div>
 </div>

@@ -9,7 +9,7 @@ const routes: Routes = [
   { component:HomeComponent, path:'home'},
   { component:LoginComponent, path:'adminlogin'},
   { component:BankAccountComponent, path:'bankaccounts'},
-  { component:BranchDetailsComponent, path:'branchdetails/:accno'}
+  { component:BranchDetailsComponent, path:'branchdetails/:accno/:cid'}
 
 ];
 
