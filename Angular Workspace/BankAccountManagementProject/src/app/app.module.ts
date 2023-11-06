@@ -13,6 +13,7 @@ import { BankAccountComponent } from './bankaccount/bankaccount.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { AccountCardComponent } from './account-card/account-card.component';
 import { LoginComponent } from './login/login.component';
+import { BranchDetailsComponent } from './branch-details/branch-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     BankAccountComponent,
     OrderbyPipe,
     AccountCardComponent,
-    LoginComponent // other declarations of components,pipes goes here
+    LoginComponent,
+    BranchDetailsComponent // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,

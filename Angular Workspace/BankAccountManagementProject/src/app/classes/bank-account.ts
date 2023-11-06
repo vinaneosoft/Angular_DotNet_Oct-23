@@ -1,3 +1,5 @@
+import { Branch } from "./branch";
+
 export class BankAccount {
     constructor(
         private accountNumber=0,
