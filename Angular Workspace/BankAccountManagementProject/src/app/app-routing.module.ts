@@ -12,7 +12,7 @@ const routes: Routes = [
   { component:BankAccountComponent, path:'bankaccounts'},
   { component:BranchDetailsComponent, path:'branchdetails/:accno/:cid'},
   { component:HomeComponent, path:''},
-  {component:ViewNotFoundComponent, path:'**'}
+  { component:ViewNotFoundComponent, path:'**'}
 
 ];
 
