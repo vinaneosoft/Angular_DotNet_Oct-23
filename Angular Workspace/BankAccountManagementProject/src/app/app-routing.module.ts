@@ -23,7 +23,7 @@ const routes: Routes = [
     redirectTo:'home', 
     path:'',
     pathMatch:'full'
-  },
+  }, 
   { component:ViewNotFoundComponent, path:'**'}
 
 ];
