@@ -14,6 +14,7 @@ import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { AccountCardComponent } from './account-card/account-card.component';
 import { LoginComponent } from './login/login.component';
 import { BranchDetailsComponent } from './branch-details/branch-details.component';
+import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
     OrderbyPipe,
     AccountCardComponent,
     LoginComponent,
-    BranchDetailsComponent // other declarations of components,pipes goes here
+    BranchDetailsComponent,
+    ViewNotFoundComponent // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,
