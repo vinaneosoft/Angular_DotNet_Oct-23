@@ -7,22 +7,22 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
 import { LoanComponent } from './loan/loan.component';
-const childRoutes:Routes=[
-  { component:FixedDepositComponent, path:'fixeddeposit' },
-  { component:LoanComponent, path:'loan' }
-];
 const routes: Routes = [
   { 
     component:HomeComponent, 
     path:'home',
-    children:childRoutes
+    children:[
+      { component:FixedDepositComponent, path:'fixeddeposit' },
+      { component:LoanComponent, path:'loan' }
+    ]
   },
   { component:LoginComponent, path:'adminlogin'},
   { component:BankAccountComponent, path:'bankaccounts'},
   { component:BranchDetailsComponent, path:'branchdetails/:accno/:cid'},
   { 
-    component:HomeComponent, 
-    path:''
+    redirectTo:'home', 
+    path:'',
+    pathMatch:'full'
   },
   { component:ViewNotFoundComponent, path:'**'}
 
