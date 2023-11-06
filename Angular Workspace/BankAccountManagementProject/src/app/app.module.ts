@@ -15,6 +15,8 @@ import { AccountCardComponent } from './account-card/account-card.component';
 import { LoginComponent } from './login/login.component';
 import { BranchDetailsComponent } from './branch-details/branch-details.component';
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
+import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
+import { LoanComponent } from './loan/loan.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ViewNotFoundComponent } from './view-not-found/view-not-found.component
     AccountCardComponent,
     LoginComponent,
     BranchDetailsComponent,
-    ViewNotFoundComponent // other declarations of components,pipes goes here
+    ViewNotFoundComponent,
+    FixedDepositComponent,
+    LoanComponent // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,
