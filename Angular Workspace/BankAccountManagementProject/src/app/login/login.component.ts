@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -6,12 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username="vina";
-  password="Vina@123";
+  
+  constructor(private loginService:LoginService){
+
+  }
   login(adminLogin:any){
-    if(adminLogin.value.username===this.username && adminLogin.value.password===this.password)
-    {
-      window.alert("you are logged in successfully....");
-    }
+    this.loginService.loginCheck(adminLogin.value.username, adminLogin.value.password);
   }
 }
