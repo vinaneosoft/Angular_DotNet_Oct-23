@@ -10,11 +10,10 @@ import { AccountBranch } from '../classes/account-branch';
 export class BranchDetailsComponent {
 
 
-    rabaleBranch=new Branch('AR2344', 'Axis Bank, Rabale', 'Plot no.3, MG Road, Rabale', '9898989898'),
-    belapurBranch=new Branch('AB2344', 'Axis Bank, Belapur', 'Plot no.1, Prabhat Road, Belapur', '909090909'),
+    rabaleBranch=new Branch('AR2344', 'Axis Bank, Rabale', 'Plot no.3, MG Road, Rabale', '9898989898')
+    belapurBranch=new Branch('AB2344', 'Axis Bank, Belapur', 'Plot no.1, Prabhat Road, Belapur', '909090909')
     vashiBranch=new Branch('AV2344', 'Axis Bank, Vashi', 'Plot no.2, Jahangir Road, Vashi', '8080808080')
   
-
   accountBranchDetails:AccountBranch[]=[
     new AccountBranch(22222222,this.rabaleBranch),
     new AccountBranch(90909090,this.vashiBranch),
