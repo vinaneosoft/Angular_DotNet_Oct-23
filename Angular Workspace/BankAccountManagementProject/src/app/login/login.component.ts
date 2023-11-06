@@ -7,9 +7,8 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
-  constructor(private loginService:LoginService){
 
+  constructor(private loginService:LoginService){
   }
   login(adminLogin:any){
     this.loginService.loginCheck(adminLogin.value.username, adminLogin.value.password);
