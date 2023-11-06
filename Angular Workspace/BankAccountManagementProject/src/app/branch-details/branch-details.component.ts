@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router'; // built in service, API to se
 })
 export class BranchDetailsComponent {
   accountNumber=0; 
+  customerId=0;
   branchDetails:AccountBranch | undefined =new AccountBranch();
   rabaleBranch=new Branch('AR2344', 'Axis Bank, Rabale', 'Plot no.3, MG Road, Rabale', '9898989898')
   belapurBranch=new Branch('AB2344', 'Axis Bank, Belapur', 'Plot no.1, Prabhat Road, Belapur', '909090909')
@@ -32,5 +33,8 @@ export class BranchDetailsComponent {
     let routeParam=this.currentRoute.snapshot.params['accno'];  // route params always of type string 
     this.accountNumber=parseInt(routeParam);
     console.log(this.accountNumber);
+    let routeParam2=this.currentRoute.snapshot.paramMap.get('cid');
+    if(routeParam2!=null)
+      this.customerId=parseInt(routeParam2);
   }
 }
