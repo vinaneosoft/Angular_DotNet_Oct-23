@@ -1,1 +1,13 @@
-<p>branch-details works!</p>
+
+<section>
+    <h4>Branch Details</h4>
+    <h6>Account Number: {{branchDetails?.accountNumber}}</h6>
+    <table class="table table-bordered">
+        <tbody>
+            <tr><th>IFSC CODE:</th><td>{{branchDetails?.branch?.ifscCode}}</td></tr>
+            <tr><th>NAME:</th><td>{{branchDetails?.branch?.branchName}}</td></tr>
+            <tr><th>ADDRESS:</th><td>{{branchDetails?.branch?.branchAddress}}</td></tr>
+            <tr><th>CONTACT NUMBER:</th><td>{{branchDetails?.branch?.contactNumber}}</td></tr>
+        </tbody>
+    </table>
+</section>

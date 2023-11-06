@@ -22,11 +22,15 @@ export class BranchDetailsComponent {
     new AccountBranch(23232323,this.rabaleBranch)
   ]
   constructor(private currentRoute:ActivatedRoute){ // when contructor gets called, service object gets injected automatically
-     let routeParam=currentRoute.snapshot.params['accno'];  // route params always of type string 
-     this.accountNumber=parseInt(routeParam);
-     console.log(this.accountNumber);
+    this.extractRouteParam();
+    this.findBranch();
   }
   findBranch(){
    this.branchDetails = this.accountBranchDetails.find(acbranch=>acbranch.accountNumber===this.accountNumber)
+  }
+  extractRouteParam(){
+    let routeParam=this.currentRoute.snapshot.params['accno'];  // route params always of type string 
+    this.accountNumber=parseInt(routeParam);
+    console.log(this.accountNumber);
   }
 }
