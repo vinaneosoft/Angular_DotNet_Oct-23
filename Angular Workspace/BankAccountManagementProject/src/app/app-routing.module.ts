@@ -7,6 +7,7 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
 import { LoanComponent } from './loan/loan.component';
+import { GuardService } from './services/guard.service';
 const routes: Routes = [
   { 
     component:HomeComponent, 
@@ -17,7 +18,7 @@ const routes: Routes = [
     ]
   },
   { component:LoginComponent, path:'adminlogin'},
-  { component:BankAccountComponent, path:'bankaccounts'},
+  { component:BankAccountComponent, path:'bankaccounts', canActivate:[GuardService]},
   { component:BranchDetailsComponent, path:'branchdetails/:accno/:cid'},
   { 
     redirectTo:'home', 
@@ -25,10 +26,7 @@ const routes: Routes = [
     pathMatch:'full'
   }, 
   { component:ViewNotFoundComponent, path:'**'}
-
 ];
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
