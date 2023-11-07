@@ -1,7 +1,8 @@
 <div class="card text-bg-success">
     <img [src]="bankAccount.profilePic" class="card-img-top img-fluid" alt="...">
     <div class="card-body">
-      <h5 class="card-title"><b class="text-danger">{{bankAccount.custName}}</b></h5>
+      <h5 class="card-title"><b class="text-danger">{{bankAccount.custName | uppercase}}</b></h5>
+      <h6 class="card-title"><b class="text-warning">{{bankAccount.accType |lowercase}} account </b></h6>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Customer Id: <b>{{bankAccount.custId}}</b></li>

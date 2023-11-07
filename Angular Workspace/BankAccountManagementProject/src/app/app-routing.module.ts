@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   },
   { component:LoginComponent, path:'adminlogin'},
-  { component:BankAccountComponent, path:'bankaccounts', canActivate:mapToCanActivate([GuardService])},
+  { component:BankAccountComponent, path:'bankaccounts', /* canActivate:mapToCanActivate([GuardService]) */},
   { component:BranchDetailsComponent, path:'branchdetails/:accno/:cid'},
   { 
     redirectTo:'home', 

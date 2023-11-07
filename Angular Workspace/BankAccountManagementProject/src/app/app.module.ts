@@ -23,7 +23,8 @@ import { CounterService } from './services/counter.service';
 import { GuardService } from './services/guard.service';
 import { LoginService } from './services/login.service';
 import { Child3Component } from './child3/child3.component';
-
+import { CRUDService } from './services/crud.service';
+import {HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,10 +46,10 @@ import { Child3Component } from './child3/child3.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
     // other builtin modules, custom modules goes here
   ],
-  providers: [CounterService, GuardService, LoginService],    // services are declared
+  providers: [CounterService, GuardService, LoginService, CRUDService],    // services are declared
   bootstrap: [AppComponent]
 })
 export class AppModule { }
