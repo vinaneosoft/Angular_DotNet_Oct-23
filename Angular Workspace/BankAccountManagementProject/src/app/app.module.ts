@@ -17,6 +17,8 @@ import { BranchDetailsComponent } from './branch-details/branch-details.componen
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
 import { LoanComponent } from './loan/loan.component';
+import { Child1Component } from './child1/child1.component';
+import { Child2Component } from './child2/child2.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { LoanComponent } from './loan/loan.component';
     BranchDetailsComponent,
     ViewNotFoundComponent,
     FixedDepositComponent,
-    LoanComponent // other declarations of components,pipes goes here
+    LoanComponent,
+    Child1Component,
+    Child2Component // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,
