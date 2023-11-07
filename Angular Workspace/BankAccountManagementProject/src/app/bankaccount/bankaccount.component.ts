@@ -23,7 +23,7 @@ export class BankAccountComponent {
     new BankAccount(90909090,6666,'Baban Singh',5000.7,"savings", new Date('17 March, 2003'),"assets/Images/6666.jpg"),
   ]
   constructor(private crudService:CRUDService){
-    crudService.test();
+   
     setTimeout(() => this.changeStyle(), 4000);
     this.accountInputForm=new FormGroup({
       accNum:new FormControl("",Validators.required),
@@ -108,8 +108,11 @@ export class BankAccountComponent {
     bankAccount.custId=this.accountInputForm.value.custId;
     bankAccount.custName=this.accountInputForm.value.custName;
     bankAccount.profilePic="assets/Images/noimage.jpg";
-    this.accounts.push(bankAccount);
-
+   // this.accounts.push(bankAccount);
+    this.crudService.addAccount(bankAccount).subscribe({
+      next:res=>console.log(res),
+      error:res=>console.log(res)
+    });
     
  //   let bankAccount=new BankAccount(this.accNum?.value, this.custId?.value,);
   }
