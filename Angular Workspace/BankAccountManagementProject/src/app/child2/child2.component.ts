@@ -9,7 +9,6 @@ import { CounterService } from '../services/counter.service';
 export class Child2Component {
   count=this.counterService.counter;
   constructor(private counterService:CounterService){
-
   }
   get(){
     this.count=this.counterService.getCounter();
