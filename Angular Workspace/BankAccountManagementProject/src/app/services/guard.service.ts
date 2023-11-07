@@ -8,6 +8,7 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class GuardService implements CanActivate{
+ 
   constructor(private loginService:LoginService) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     if (this.loginService.loginFlag) 
