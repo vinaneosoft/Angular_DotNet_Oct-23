@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToCanActivate } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BankAccountComponent } from './bankaccount/bankaccount.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   },
   { component:LoginComponent, path:'adminlogin'},
-  { component:BankAccountComponent, path:'bankaccounts', canActivate:[GuardService]},
+  { component:BankAccountComponent, path:'bankaccounts', canActivate:mapToCanActivate([GuardService])},
   { component:BranchDetailsComponent, path:'branchdetails/:accno/:cid'},
   { 
     redirectTo:'home', 
