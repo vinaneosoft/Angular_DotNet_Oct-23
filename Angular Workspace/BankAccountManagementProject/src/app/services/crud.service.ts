@@ -9,9 +9,7 @@ export class CRUDService {
 
   address="http://localhost:3000/accounts";
   constructor(private http:HttpClient) { }
-
   // adding account info in json file : post request : address, data
-
   addAccount(account:BankAccount){
     return this.http.post(this.address,account);
   }

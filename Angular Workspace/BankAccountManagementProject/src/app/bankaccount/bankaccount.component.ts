@@ -110,7 +110,7 @@ export class BankAccountComponent {
     bankAccount.profilePic="assets/Images/noimage.jpg";
    // this.accounts.push(bankAccount);
     this.crudService.addAccount(bankAccount).subscribe({
-      next:res=>console.log(res),
+      next:res=>window.alert("Account Opened Successfully......."),
       error:res=>console.log(res)
     });
     
