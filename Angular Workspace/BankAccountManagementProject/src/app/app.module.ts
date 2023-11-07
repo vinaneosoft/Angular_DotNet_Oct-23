@@ -19,6 +19,10 @@ import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
 import { LoanComponent } from './loan/loan.component';
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
+import { CounterService } from './services/counter.service';
+import { GuardService } from './services/guard.service';
+import { LoginService } from './services/login.service';
+import { Child3Component } from './child3/child3.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +40,15 @@ import { Child2Component } from './child2/child2.component';
     FixedDepositComponent,
     LoanComponent,
     Child1Component,
-    Child2Component // other declarations of components,pipes goes here
+    Child2Component,
+    Child3Component // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule
     // other builtin modules, custom modules goes here
   ],
-  providers: [],    // services are declared
+  providers: [CounterService, GuardService, LoginService],    // services are declared
   bootstrap: [AppComponent]
 })
 export class AppModule { }

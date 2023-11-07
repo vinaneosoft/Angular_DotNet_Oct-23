@@ -11,6 +11,7 @@ export class Child2Component {
   constructor(private counterService:CounterService){
   }
   get(){
+    this.counterService.incrementCounter();
     this.count=this.counterService.getCounter();
   }
 }
