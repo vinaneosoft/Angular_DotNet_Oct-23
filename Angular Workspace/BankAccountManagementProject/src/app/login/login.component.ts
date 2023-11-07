@@ -7,10 +7,10 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  failureMsg="";
   constructor(private loginService:LoginService){
   }
   login(adminLogin:any){
-    this.loginService.loginCheck(adminLogin.value.username, adminLogin.value.password);
+   this.failureMsg = this.loginService.loginCheck(adminLogin.value.username, adminLogin.value.password);
   }
 }

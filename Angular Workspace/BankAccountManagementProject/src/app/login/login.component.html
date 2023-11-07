@@ -1,5 +1,8 @@
 <section class="my-2">
     <h3 class="text-center">LOGIN FORM</h3>
+    <div>
+        <b class="text-danger"><i><small>{{failureMsg}}</small></i></b>
+    </div>
     <form (submit)="login(adminLoginForm)" class="p-2 bg-warning"  #adminLoginForm="ngForm">
         <div class="mb-3">
           <label for="uname" class="form-label">UserName</label>

@@ -7,18 +7,22 @@ export class LoginService {
   username="vina";
   password="Vina@123";
   loginFlag=false;
+  private failureMessage="";
   constructor(private router:Router) // 2. inject service
   { }
 // business logic must be added in service
-  loginCheck(uname:string,pass:string){
+  loginCheck(uname:string,pass:string):string{
    if(uname===this.username && pass===this.password) 
    {
      this.loginFlag=true;
      window.alert("You are logged in Successfully...");
      this.router.navigate(['home']);  //3. use service
+     this.failureMessage="";
    }
    else{
     this.loginFlag=false;
+    this.failureMessage="INCORRECT USERNAME OR PASSWORD";
    }
+   return this.failureMessage;
   }
 }
