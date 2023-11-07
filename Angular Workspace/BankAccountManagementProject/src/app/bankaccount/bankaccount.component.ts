@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BankAccount } from '../classes/bank-account';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from '../classes/custom-validator';
+import { CRUDService } from '../services/crud.service';
 @Component({
   selector: 'app-bankaccount',
   templateUrl: './bankaccount.component.html',
@@ -21,7 +22,8 @@ export class BankAccountComponent {
     new BankAccount(65656565,4545,'Krupa Singh',78000.7,"savings", new Date('30 March, 2003'),"assets/Images/4545.jpg"),
     new BankAccount(90909090,6666,'Baban Singh',5000.7,"savings", new Date('17 March, 2003'),"assets/Images/6666.jpg"),
   ]
-  constructor(){
+  constructor(private crudService:CRUDService){
+    crudService.test();
     setTimeout(() => this.changeStyle(), 4000);
     this.accountInputForm=new FormGroup({
       accNum:new FormControl("",Validators.required),
