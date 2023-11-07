@@ -7,9 +7,7 @@ import { CounterService } from '../services/counter.service';
   styleUrls: ['./child1.component.css']
 })
 export class Child1Component {
-
   constructor(private counterService:CounterService){}
-
   incr(){
     this.counterService.incrementCounter();
   }
