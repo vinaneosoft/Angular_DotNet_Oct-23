@@ -12,6 +12,11 @@ export class SearchComponent {
   searchAcc(searchForm:any){
     console.log(searchForm.value);
     let accountNumber=parseInt(searchForm.value.accountNumber);
-    this.crud.getAccountByAccountNumber(accountNumber).subscribe();
+    this.crud.getAccountByAccountNumber(accountNumber).subscribe(
+      {
+        next:data=>console.log(data),
+        error:res=>console.log(res)
+      }
+    );
   }
 }
