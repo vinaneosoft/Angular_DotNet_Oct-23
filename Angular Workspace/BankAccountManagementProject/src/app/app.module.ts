@@ -25,6 +25,7 @@ import { LoginService } from './services/login.service';
 import { Child3Component } from './child3/child3.component';
 import { CRUDService } from './services/crud.service';
 import {HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import {HttpClientModule } from '@angular/common/http';
     LoanComponent,
     Child1Component,
     Child2Component,
-    Child3Component // other declarations of components,pipes goes here
+    Child3Component,
+    SearchComponent // other declarations of components,pipes goes here
   ],
   imports: [
     BrowserModule,

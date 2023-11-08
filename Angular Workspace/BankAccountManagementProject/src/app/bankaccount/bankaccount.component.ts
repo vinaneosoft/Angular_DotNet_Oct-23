@@ -90,12 +90,11 @@ export class BankAccountComponent {
   collectAccountDetails(){
     let bankAccount=new BankAccount();
     bankAccount=this.accountInputForm.value;
-    console.log(bankAccount);
     bankAccount.customerProfilePic="assets/Images/noimage.jpg";
     if(bankAccount.accountDate==null)
          bankAccount.accountDate=new Date();
 
-         
+
     this.crudService.addAccount(bankAccount).subscribe({
       next:res=>window.alert("Account Opened Successfully......."),
       error:res=>console.log(res)
