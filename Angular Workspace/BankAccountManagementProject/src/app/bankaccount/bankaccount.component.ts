@@ -133,7 +133,12 @@ export class BankAccountComponent {
   }
   edit(account:BankAccount){
     //console.log(account);
-    this.accountInputForm.controls['id'].setValue(account.id)
+    this.accountInputForm.controls['id'].setValue(account.id);
+    this.accountInputForm.controls['customerId'].setValue(account.customerId); 
+    this.accountInputForm.controls['customerName'].setValue(account.customerName);
+    this.accountInputForm.controls['accountBalance'].setValue(account.accountBalance);
+    this.accountInputForm.controls['accountType'].setValue(account.accountType);
+    this.accountInputForm.controls['accountCreateDate'].setValue(account.accountCreateDate);
   }
   array=['border','border-2','border-danger'];
 }
