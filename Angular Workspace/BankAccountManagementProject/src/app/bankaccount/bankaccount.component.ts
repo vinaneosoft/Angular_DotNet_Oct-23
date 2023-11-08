@@ -23,7 +23,7 @@ export class BankAccountComponent {
     new BankAccount(90909090,6666,'Baban Singh',5000.7,"savings", new Date('17 March, 2003'),"assets/Images/6666.jpg"),
   ]
   constructor(private crudService:CRUDService){
-   
+    this.getAccounts();
     setTimeout(() => this.changeStyle(), 4000);
     this.accountInputForm=new FormGroup({
       accNum:new FormControl("",Validators.required),
@@ -37,8 +37,6 @@ export class BankAccountComponent {
       custPass:new FormControl("",[Validators.required,Validators.pattern(this.passwordPattern)]),
       confirmPass:new FormControl("",Validators.required)
     }, CustomValidators.passwordValidation);  // custom validation method, must match built validation method
-    // FormGroup object automatically passed to custom validation function
-// on FormControl, FormGroup
   }
    get accNum(){
     return this.accountInputForm.get('accountNumber');
@@ -64,78 +62,57 @@ export class BankAccountComponent {
    get accType(){
     return this.accountInputForm.get('accType');
    }
-
    get accountDate(){
     return this.accountInputForm.get('accountDate');
    }
-   //css key value pairs or js key value pairs
-    //background-color   : backgroundColor
-    //font-size  : fontSize
-    //color : color
   h3StyleObject={
     'background-color':'yellow',
      color:'blueviolet',
      textAlign:'center'
   }
- 
   changeStyle(){
     this.h3StyleObject['background-color']='pink';
     this.h3StyleObject.color='yellow';
   }
   tableClassArray=['table', 'table-bordered',"table-responsive",'fontClass'];
-
   theadClassObject={
     'text-danger':true,
     'table-warning':true
   }
-  orderProperty="accNum";
+  orderProperty="id";
   orderBy(property:string){
     this.orderProperty=property;
   }
   headingFromChild="";
   fromChild(data:string){
    this.headingFromChild=data;
-    
   }
   collectAccountDetails(){
     let bankAccount=new BankAccount();
-  //  this.bankAccount=this.accountInputForm.value;  // FormGroup : more values, bankAcount : less
-    bankAccount.accNum=this.accountInputForm.value.accNum;
-    bankAccount.accBalance=this.accountInputForm.value.accBalance;
-    bankAccount.accType=this.accountInputForm.value.accType;
+    bankAccount.id=this.accountInputForm.value.accNum;
+    bankAccount.accountBalance=this.accountInputForm.value.accBalance;
+    bankAccount.accountType=this.accountInputForm.value.accType;
     console.log(typeof this.accountInputForm.value.accountDate);
     if(this.accountInputForm.value.accountDate=="")
-      bankAccount.accountDate=new Date();
+      bankAccount.accountCreateDate=new Date();
    else
-      bankAccount.accountDate=this.accountInputForm.value.accountDate;
-    bankAccount.custId=this.accountInputForm.value.custId;
-    bankAccount.custName=this.accountInputForm.value.custName;
-    bankAccount.profilePic="assets/Images/noimage.jpg";
-   // this.accounts.push(bankAccount);
+      bankAccount.accountCreateDate=this.accountInputForm.value.accountDate;
+    bankAccount.customerId=this.accountInputForm.value.custId;
+    bankAccount.customerName=this.accountInputForm.value.custName;
+    bankAccount.customerProfilePic="assets/Images/noimage.jpg";
     this.crudService.addAccount(bankAccount).subscribe({
       next:res=>window.alert("Account Opened Successfully......."),
       error:res=>console.log(res)
     });
-    
- //   let bankAccount=new BankAccount(this.accNum?.value, this.custId?.value,);
+  }
+  getAccounts(){
+    this.crudService.getAllAccounts().subscribe({
+      next:data=>{
+        this.accounts=data as BankAccount[];
+        },
+      error:res=>console.log(res)    
+    });
   }
   array=['border','border-2','border-danger'];
-  // custom validation function
 }
 
-
-// function
-
-
-
-/*
-   checkRequired(){
-
-    logic 
-
-    if(balance>=1000)
-      return null;
-    else
-      return {min:true}  validation fails
-   }
-*/

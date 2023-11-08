@@ -1,16 +1,16 @@
 <div class="card text-bg-success">
-    <img [src]="bankAccount.profilePic" class="card-img-top img-fluid" alt="...">
+    <img [src]="bankAccount.customerProfilePic" class="card-img-top img-fluid" alt="...">
     <div class="card-body">
-      <h5 class="card-title"><b class="text-danger">{{bankAccount.custName | uppercase}}</b></h5>
-      <h6 class="card-title"><b class="text-warning">{{bankAccount.accType |lowercase}} account </b></h6>
+      <h5 class="card-title"><b class="text-danger">{{bankAccount.customerName | uppercase}}</b></h5>
+      <h6 class="card-title"><b class="text-warning">{{bankAccount.accountType |lowercase}} account </b></h6>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Customer Id: <b>{{bankAccount.custId}}</b></li>
-      <li class="list-group-item">Account Number: <b>{{bankAccount.accNum}}</b></li>
-      <li class="list-group-item">Current Balance: <b>{{bankAccount.accBalance}}</b></li>
-      <li class="list-group-item">Account Created on <b>{{bankAccount.accountDate | date: 'medium'}}</b></li>
+      <li class="list-group-item">Customer Id: <b>{{bankAccount.customerId}}</b></li>
+      <li class="list-group-item">Account Number: <b>{{bankAccount.id}}</b></li>
+      <li class="list-group-item">Current Balance: <b>{{bankAccount.accountBalance}}</b></li>
+      <li class="list-group-item">Account Created on <b>{{bankAccount.accountCreateDate | date: 'medium'}}</b></li>
     </ul>
     <div class="card-body">
-      <a [routerLink]="['/branchdetails', bankAccount.accNum,bankAccount.custId ]" class="card-link">Branch Details</a>
+      <a [routerLink]="['/branchdetails', bankAccount.id,bankAccount.customerId ]" class="card-link">Branch Details</a>
     </div>
 </div>

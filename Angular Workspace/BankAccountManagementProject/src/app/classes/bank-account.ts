@@ -2,17 +2,17 @@ import { Branch } from "./branch";
 
 export class BankAccount {
     constructor(
-        private id=0,
-        private customerId=0,
-        private customerName="AAA",
-        private accountBalance=0,
-        private accountType="savings",
-        private accountCreateDate=new Date(),
-        private customerProfilePic=""
+        public id=0,
+        public customerId=0,
+        public customerName="AAA",
+        public accountBalance=0,
+        public accountType="savings",
+        public accountCreateDate=new Date(),
+        public customerProfilePic=""
         )
         
     {}
-    get accNum(){
+     get accNum(){
         return this.id;
     }
     get custId(){
@@ -53,7 +53,7 @@ export class BankAccount {
     }
     set custName(customerName:string){
         this.customerName=customerName;
-    }
+    } 
     deposit(deptAmount:number){
 
     }

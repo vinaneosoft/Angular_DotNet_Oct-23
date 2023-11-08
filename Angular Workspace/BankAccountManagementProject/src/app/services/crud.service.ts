@@ -13,4 +13,8 @@ export class CRUDService {
   addAccount(account:BankAccount){
     return this.http.post(this.address,account);
   }
+
+  getAllAccounts(){
+    return this.http.get(this.address);
+  }
 }

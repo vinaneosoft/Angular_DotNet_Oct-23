@@ -96,22 +96,22 @@
     <table [ngClass]="tableClassArray">
         <thead [ngClass]="theadClassObject">
             <tr>
-                <th (click)="orderBy('accNum')">ACCOUNT NUMBER</th> <!-- view+development-->
-                <th (click)="orderBy('custId')">CUSTOMER ID</th>
-                <th (click)="orderBy('custName')">CUSTOMER NAME</th>
-                <th (click)="orderBy('accBalance')">BALANCE</th>
-                <th (click)="orderBy('accType')">ACCOUNT TYPE</th>
-                <th (click)="orderBy('accountDate')">ACCOUNT CREATED ON</th>
+                <th (click)="orderBy('id')">ACCOUNT NUMBER</th> <!-- view+development-->
+                <th (click)="orderBy('customerId')">CUSTOMER ID</th>
+                <th (click)="orderBy('customerName')">CUSTOMER NAME</th>
+                <th (click)="orderBy('accountBalance')">BALANCE</th>
+                <th (click)="orderBy('accountType')">ACCOUNT TYPE</th>
+                <th (click)="orderBy('accountCreateDate')">ACCOUNT CREATED ON</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let account of accounts | orderby : orderProperty">
-                <td>{{account.accNum}}</td>
-                <td>{{account.custId}}</td>
-                <td>{{account.custName}}</td>
-                <td>{{account.accBalance}}</td>
-                <td>{{account.accType}}</td>
-                <td>{{account.accountDate | date: 'medium'}}</td>
+                <td>{{account.id}}</td>
+                <td>{{account.customerId}}</td>
+                <td>{{account.customerName}}</td>
+                <td>{{account.accountBalance}}</td>
+                <td>{{account.accountType}}</td>
+                <td>{{account.accountCreateDate | date: 'medium'}}</td>
             </tr>
         </tbody>
     </table>
@@ -132,16 +132,16 @@
         </thead>
         <tbody>
             <tr *ngFor="let account of accounts">
-                <td>{{account.accNum}}</td>
-                <td>{{account.custId}}</td>
-                <td>{{account.custName | titlecase}}</td>
-                <td>{{account.custName | slice : 0 : 5}}</td>
-                <td>{{account.accBalance | number}}</td> <!-- thousand seperator, number rounded up to 3 dec digits-->
-                <td>{{account.accBalance | number : '5.0-0'}}</td> <!-- '.2-2' '.2-4'-->
-                <td>{{account.accBalance | currency}}</td><!-- thousand seperator, $ currency, number rounded to exact 2 deci digits-->
-                <td>{{account.accBalance | currency : 'INR':true:'.1-1'}}</td> <!-- symbol: true, code: false-->
-                <td>{{account.accType | uppercase }}</td>
-                <td>{{account.accountDate | date}}</td>
+                <td>{{account.id}}</td>
+                <td>{{account.customerId}}</td>
+                <td>{{account.customerName | titlecase}}</td>
+                <td>{{account.customerName | slice : 0 : 5}}</td>
+                <td>{{account.accountBalance | number}}</td> <!-- thousand seperator, number rounded up to 3 dec digits-->
+                <td>{{account.accountBalance | number : '5.0-0'}}</td> <!-- '.2-2' '.2-4'-->
+                <td>{{account.accountBalance | currency}}</td><!-- thousand seperator, $ currency, number rounded to exact 2 deci digits-->
+                <td>{{account.accountBalance | currency : 'INR':true:'.1-1'}}</td> <!-- symbol: true, code: false-->
+                <td>{{account.accountType | uppercase }}</td>
+                <td>{{account.accountCreateDate | date}}</td>
             </tr>
         </tbody>
     </table>
@@ -157,11 +157,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let account of accounts">
-                <td>{{account.accountDate | date : 'short'}}</td>
-                <td>{{account.accountDate | date : 'medium'}}</td>
-                <td>{{account.accountDate | date : 'long'}}</td>
-                <td>{{account.accountDate | date : 'full'}}</td>
-                <td>{{account.accountDate | date : 'dd-MMMM-yyyy'}}</td>
+                <td>{{account.accountCreateDate | date : 'short'}}</td>
+                <td>{{account.accountCreateDate | date : 'medium'}}</td>
+                <td>{{account.accountCreateDate | date : 'long'}}</td>
+                <td>{{account.accountCreateDate | date : 'full'}}</td>
+                <td>{{account.accountCreateDate | date : 'dd-MMMM-yyyy'}}</td>
             </tr>
         </tbody>
     </table>
