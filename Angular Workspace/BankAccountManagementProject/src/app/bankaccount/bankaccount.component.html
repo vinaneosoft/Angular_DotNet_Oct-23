@@ -22,8 +22,11 @@
     </div>
     <h3 [ngStyle]="h3StyleObject">{{headingFromChild}}</h3>
     <div class="row">
-        <div class="col-md-2" *ngFor="let account of accounts">
+        <div class="col-md-3 bg-warning border border-5" *ngFor="let account of accounts">
                 <app-account-card [bankAccount]="account"  (eventEmitter)="fromChild($event)"></app-account-card>
+                <div>
+                    Delete ICON
+                </div>
         </div>
     </div>
     <section class="m-5 border border-3 border-primary">
