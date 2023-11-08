@@ -10,21 +10,21 @@
         <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAccountDetails()">
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
-              <input type="number" class="form-control" id="accno" formControlName="accNum" >
+              <input type="number" class="form-control" id="accno" formControlName="id" >
               <div *ngIf="accNum?.touched" class="text-danger">
                 <i *ngIf="accNum?.hasError('required')"><small>This field is required</small></i>
               </div>
             </div>
             <div class="mb-3">
               <label for="custid" class="form-label">Customer ID</label>
-              <input type="number" class="form-control" id="custid" formControlName="custId">
+              <input type="number" class="form-control" id="custid" formControlName="customerId">
               <div *ngIf="custId?.touched" class="text-danger">
                 <i *ngIf="custId?.hasError('required')"><small>This field is required</small></i>
               </div>
             </div>
             <div class="mb-3">
                 <label for="custname" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="custname" formControlName="custName">
+                <input type="text" class="form-control" id="custname" formControlName="customerName">
                 <div *ngIf="custName?.touched" class="text-danger">
                     <i *ngIf="custName?.hasError('required')"><small>This field is required</small></i>
                     <i *ngIf="custName?.hasError('pattern')"><small>Kindly put only alphabets</small></i>
@@ -43,7 +43,7 @@
             </div>
             <div class="mb-3">
                 <label for="bal" class="form-label">Current Balance</label>
-                <input type="number" class="form-control" id="bal" formControlName="accBalance">
+                <input type="number" class="form-control" id="bal" formControlName="accountBalance">
                 <div id="balanceHelp" class="form-text">Do not put 5 crore or more while creating new account. You may deposit later</div>
                 <div *ngIf="accBalance?.touched" class="text-danger">
                     <i *ngIf="accBalance?.hasError('required')"><small>This field is required</small></i>
@@ -53,7 +53,7 @@
             </div>
             <div class="mb-3">
                 <label for="acctype" class="form-label">Type of Account</label>   
-                <select id="acctype" formControlName="accType">
+                <select id="acctype" formControlName="accountType">
                     <option value="savings">SAVINGS</option>
                     <option value="salary" selected>SALARY</option>
                     <option value="current">CURRENT</option>
@@ -61,7 +61,7 @@
             </div>
             <div class="mb-3">
                 <label for="accdate" class="form-label">Account Created On</label>
-                <input type="datetime-local" class="form-control" id="accdate" formControlName="accountDate">
+                <input type="datetime-local" class="form-control" id="accdate" formControlName="accountCreateDate">
             </div>
             <div class="mb-3">
                 <label for="pass" class="form-label">Set Password</label>
@@ -84,10 +84,10 @@
                     <i *ngIf="accountInputForm?.hasError('passmatch')"><small>Both passwords must match</small></i>
                 </div>
             </div>
-            <!-- <div class="mb-3">
+             <div class="mb-3">
                 <label for="pic" class="form-label">Profile Pic</label>
-                <input type="file" class="form-control" id="pic" formControlName="profilePic">
-            </div> -->
+                <input type="file" class="form-control" id="pic" formControlName="customerProfilePic">
+            </div> 
             <input type="submit" class="btn btn-primary m-2" value="CREATE ACCOUNT" [disabled]="accountInputForm.invalid">
             <input type="reset" class="btn btn-primary m-2" value="RESET">
           </form>

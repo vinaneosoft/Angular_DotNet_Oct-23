@@ -26,20 +26,20 @@ export class BankAccountComponent {
     this.getAccounts();
     setTimeout(() => this.changeStyle(), 4000);
     this.accountInputForm=new FormGroup({
-      accNum:new FormControl("",Validators.required),
-      custId:new FormControl("",Validators.required),
-      custName:new FormControl("",[Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2),Validators.maxLength(50)]),
-      accBalance:new FormControl(1000,[Validators.required, Validators.min(1000), Validators.max(50000000)]),
-      accType:new FormControl("current"),
-      accountDate:new FormControl(""),
-      profilePic:new FormControl(""),
+      id:new FormControl("",Validators.required),
+      customerId:new FormControl("",Validators.required),
+      customerName:new FormControl("",[Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2),Validators.maxLength(50)]),
+      accountBalance:new FormControl(1000,[Validators.required, Validators.min(1000), Validators.max(50000000)]),
+      accountType:new FormControl("current"),
+      accountCreateDate:new FormControl(""),
+      customerProfilePic:new FormControl(""),
       custEmail:new FormControl("@gmail.com",[Validators.required, Validators.email]),
       custPass:new FormControl("",[Validators.required,Validators.pattern(this.passwordPattern)]),
       confirmPass:new FormControl("",Validators.required)
     }, CustomValidators.passwordValidation);  // custom validation method, must match built validation method
   }
    get accNum(){
-    return this.accountInputForm.get('accountNumber');
+    return this.accountInputForm.get('id');
    }
    get custId(){
     return this.accountInputForm.get('customerId');
@@ -60,10 +60,10 @@ export class BankAccountComponent {
     return this.accountInputForm.get('confirmPass');
    }
    get accType(){
-    return this.accountInputForm.get('accType');
+    return this.accountInputForm.get('accountType');
    }
    get accountDate(){
-    return this.accountInputForm.get('accountDate');
+    return this.accountInputForm.get('accountCreateDate');
    }
   h3StyleObject={
     'background-color':'yellow',
@@ -89,17 +89,13 @@ export class BankAccountComponent {
   }
   collectAccountDetails(){
     let bankAccount=new BankAccount();
-    bankAccount.id=this.accountInputForm.value.accNum;
-    bankAccount.accountBalance=this.accountInputForm.value.accBalance;
-    bankAccount.accountType=this.accountInputForm.value.accType;
-    console.log(typeof this.accountInputForm.value.accountDate);
-    if(this.accountInputForm.value.accountDate=="")
-      bankAccount.accountCreateDate=new Date();
-   else
-      bankAccount.accountCreateDate=this.accountInputForm.value.accountDate;
-    bankAccount.customerId=this.accountInputForm.value.custId;
-    bankAccount.customerName=this.accountInputForm.value.custName;
+    bankAccount=this.accountInputForm.value;
+    console.log(bankAccount);
     bankAccount.customerProfilePic="assets/Images/noimage.jpg";
+    if(bankAccount.accountDate==null)
+         bankAccount.accountDate=new Date();
+
+         
     this.crudService.addAccount(bankAccount).subscribe({
       next:res=>window.alert("Account Opened Successfully......."),
       error:res=>console.log(res)
