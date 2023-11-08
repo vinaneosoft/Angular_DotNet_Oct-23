@@ -2,7 +2,7 @@ import { Branch } from "./branch";
 
 export class BankAccount {
     constructor(
-        private accountNumber=0,
+        private id=0,
         private customerId=0,
         private customerName="AAA",
         private accountBalance=0,
@@ -13,7 +13,7 @@ export class BankAccount {
         
     {}
     get accNum(){
-        return this.accountNumber;
+        return this.id;
     }
     get custId(){
         return this.customerId;
@@ -40,7 +40,7 @@ export class BankAccount {
         this.customerProfilePic=customerProfilePic;
     }
     set accNum(accountNumber:number){
-        this.accountNumber=accountNumber
+        this.id=accountNumber
     }
     set custId(customerId:number){
         this.customerId=customerId

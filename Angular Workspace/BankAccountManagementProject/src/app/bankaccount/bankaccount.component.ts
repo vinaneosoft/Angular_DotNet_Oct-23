@@ -104,7 +104,10 @@ export class BankAccountComponent {
     bankAccount.accNum=this.accountInputForm.value.accNum;
     bankAccount.accBalance=this.accountInputForm.value.accBalance;
     bankAccount.accType=this.accountInputForm.value.accType;
-    bankAccount.accountDate=this.accountInputForm.value.accountDate;
+    if(this.accountInputForm.value.accountDate!="")
+      bankAccount.accountDate=this.accountInputForm.value.accountDate;
+    else
+      bankAccount.accountDate=new Date();
     bankAccount.custId=this.accountInputForm.value.custId;
     bankAccount.custName=this.accountInputForm.value.custName;
     bankAccount.profilePic="assets/Images/noimage.jpg";
