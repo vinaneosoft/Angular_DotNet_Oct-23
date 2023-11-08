@@ -98,16 +98,16 @@ export class BankAccountComponent {
     
   }
   collectAccountDetails(){
-    console.log(this.accountInputForm.value);
     let bankAccount=new BankAccount();
   //  this.bankAccount=this.accountInputForm.value;  // FormGroup : more values, bankAcount : less
     bankAccount.accNum=this.accountInputForm.value.accNum;
     bankAccount.accBalance=this.accountInputForm.value.accBalance;
     bankAccount.accType=this.accountInputForm.value.accType;
-    if(this.accountInputForm.value.accountDate!="")
-      bankAccount.accountDate=this.accountInputForm.value.accountDate;
-    else
+    console.log(typeof this.accountInputForm.value.accountDate);
+    if(this.accountInputForm.value.accountDate=="")
       bankAccount.accountDate=new Date();
+   else
+      bankAccount.accountDate=this.accountInputForm.value.accountDate;
     bankAccount.custId=this.accountInputForm.value.custId;
     bankAccount.custName=this.accountInputForm.value.custName;
     bankAccount.profilePic="assets/Images/noimage.jpg";
