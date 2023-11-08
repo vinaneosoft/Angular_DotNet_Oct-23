@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BankAccount } from '../classes/bank-account';
+import { CRUDService } from '../services/crud.service';
 
 @Component({
   selector: 'app-account-card',
@@ -7,7 +8,7 @@ import { BankAccount } from '../classes/bank-account';
   styleUrls: ['./account-card.component.css']
 })
 export class AccountCardComponent implements OnInit {
-  
+
   // data must be taken from parent
   // drilling : @input directive
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CRUDService } from '../services/crud.service';
+import { BankAccount } from '../classes/bank-account';
 
 @Component({
   selector: 'app-search',
@@ -9,14 +10,5 @@ import { CRUDService } from '../services/crud.service';
 export class SearchComponent {
 
   constructor(private crud:CRUDService){}
-  searchAcc(searchForm:any){
-    console.log(searchForm.value);
-    let accountNumber=parseInt(searchForm.value.accountNumber);
-    this.crud.getAccountByAccountNumber(accountNumber).subscribe(
-      {
-        next:data=>console.log(data),
-        error:res=>console.log(res)
-      }
-    );
-  }
+  
 }

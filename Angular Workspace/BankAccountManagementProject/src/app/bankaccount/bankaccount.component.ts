@@ -9,7 +9,8 @@ import { CRUDService } from '../services/crud.service';
   styleUrls: ['./bankaccount.component.css']
 })
 export class BankAccountComponent {
-
+  searchedAccount=new BankAccount();
+  searchFlag=false;
   accountInputForm:FormGroup=new FormGroup({});
   passwordPattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{5,15}$";
   namePattern="^[A-Za-z ]*";
@@ -108,6 +109,21 @@ export class BankAccountComponent {
       error:res=>console.log(res)    
     });
   }
+
+  searchAcc(searchForm:any){
+    console.log(searchForm.value);
+    let accountNumber=parseInt(searchForm.value.accountNumber.trim());
+    this.crudService.getAccountByAccountNumber(accountNumber).subscribe(
+      {
+        next:data=>{
+        this.searchedAccount=data as BankAccount;
+        this.searchFlag=true;
+        },
+        error:res=>console.log(res)
+      }
+    );
+  }
+
   array=['border','border-2','border-danger'];
 }
 

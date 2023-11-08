@@ -1,4 +1,25 @@
 <section [ngStyle]="{border:'2px double blue'}">
+    <form (submit)="searchAcc(searchForm)" class="d-flex"  #searchForm="ngForm">
+        <input class="form-control me-2" type="search" 
+        placeholder="Enter Account Number" name="accountNumber" ngModel>
+        <input class="btn btn-outline-success" type="submit" value="Search">
+    </form>
+    <div class="card text-bg-success w-50" *ngIf="searchFlag===true">
+        <img [src]="searchedAccount.customerProfilePic" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b class="text-danger">{{searchedAccount.customerName | uppercase}}</b></h5>
+          <h6 class="card-title"><b class="text-warning">{{searchedAccount.accountType |lowercase}} account </b></h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Customer Id: <b>{{searchedAccount.customerId}}</b></li>
+          <li class="list-group-item">Account Number: <b>{{searchedAccount.id}}</b></li>
+          <li class="list-group-item">Current Balance: <b>{{searchedAccount.accountBalance}}</b></li>
+          <li class="list-group-item">Account Created on <b>{{searchedAccount.accountCreateDate | date: 'medium'}}</b></li>
+        </ul>
+        <div class="card-body">
+          <a [routerLink]="['/branchdetails', searchedAccount.id,searchedAccount.customerId ]" class="card-link">Branch Details</a>
+        </div>
+    </div>
     <h3 [ngStyle]="h3StyleObject">{{headingFromChild}}</h3>
     <div class="row">
         <div class="col-md-2" *ngFor="let account of accounts">

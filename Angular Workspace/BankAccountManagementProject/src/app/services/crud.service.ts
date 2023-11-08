@@ -7,6 +7,8 @@ import { BankAccount } from '../classes/bank-account';
 })
 export class CRUDService {
 
+  
+  searchFlag=false;
   address="http://localhost:3000/accounts";
   constructor(private http:HttpClient) { }
   // adding account info in json file : post request : address, data
@@ -16,9 +18,8 @@ export class CRUDService {
   getAllAccounts(){
     return this.http.get(this.address); // all records
   }
-
   getAccountByAccountNumber(accountNumber:number){
-    return this.http.get(this.address+"/"+accountNumber) // address+num data is passed in link // matching record
+    return this.http.get(this.address+"/"+accountNumber) // address+num data is passed in // matching record
   }
 
 }
