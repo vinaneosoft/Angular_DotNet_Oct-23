@@ -11,10 +11,14 @@ export class CRUDService {
   constructor(private http:HttpClient) { }
   // adding account info in json file : post request : address, data
   addAccount(account:BankAccount){
-    return this.http.post(this.address,account);
+    return this.http.post(this.address,account); // data is passed via body
+  }
+  getAllAccounts(){
+    return this.http.get(this.address); // all records
   }
 
-  getAllAccounts(){
-    return this.http.get(this.address);
+  getAccountByAccountNumber(accountNumber:number){
+    return this.http.get(this.address+"/"+accountNumber) // address+num data is passed in link // matching record
   }
+
 }
