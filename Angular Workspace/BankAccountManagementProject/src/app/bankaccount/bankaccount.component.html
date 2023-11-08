@@ -139,7 +139,7 @@
                 <td>{{account.accountBalance | number}}</td> <!-- thousand seperator, number rounded up to 3 dec digits-->
                 <td>{{account.accountBalance | number : '5.0-0'}}</td> <!-- '.2-2' '.2-4'-->
                 <td>{{account.accountBalance | currency}}</td><!-- thousand seperator, $ currency, number rounded to exact 2 deci digits-->
-                <td>{{account.accountBalance | currency : 'INR':true:'.1-1'}}</td> <!-- symbol: true, code: false-->
+                <td>{{account.accountBalance | currency : 'INR':'symbol':'.1-1'}}</td> <!-- symbol: true, code: false-->
                 <td>{{account.accountType | uppercase }}</td>
                 <td>{{account.accountCreateDate | date}}</td>
             </tr>
