@@ -35,14 +35,14 @@
         <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAccountDetails()">
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
-              <input type="number" class="form-control" id="accno" formControlName="id" >
+              <input type="number" class="form-control" id="accno" formControlName="id" [readonly]="editFlag">
               <div *ngIf="accNum?.touched" class="text-danger">
                 <i *ngIf="accNum?.hasError('required')"><small>This field is required</small></i>
               </div>
             </div>
             <div class="mb-3">
               <label for="custid" class="form-label">Customer ID</label>
-              <input type="number" class="form-control" id="custid" formControlName="customerId">
+              <input type="number" class="form-control" id="custid" formControlName="customerId" [readonly]="editFlag">
               <div *ngIf="custId?.touched" class="text-danger">
                 <i *ngIf="custId?.hasError('required')"><small>This field is required</small></i>
               </div>
@@ -58,7 +58,7 @@
                     </i>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3" *ngIf="!editFlag">
                 <label for="email" class="form-label">Email Id</label>
                 <input type="email" class="form-control" id="email" formControlName="custEmail">
                 <div *ngIf="custEmail?.touched" class="text-danger">
@@ -88,7 +88,7 @@
                 <label for="accdate" class="form-label">Account Created On</label>
                 <input type="datetime-local" class="form-control" id="accdate" formControlName="accountCreateDate">
             </div>
-            <div class="mb-3">
+            <div class="mb-3" *ngIf="!editFlag">
                 <label for="pass" class="form-label">Set Password</label>
                 <input type="text" class="form-control" id="pass" formControlName="custPass">
                 <div id="passHelp" class="form-text">
@@ -100,7 +100,7 @@
                     <i *ngIf="custPass?.hasError('pattern')"><small>Password must match requirements</small></i>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3" *ngIf="!editFlag">
                 <label for="cpass" class="form-label">Confirm Password</label>
                 <input type="text" class="form-control" id="cpass" formControlName="confirmPass" [ngStyle]="confirmPass!.touched && accountInputForm!.hasError('passmatch') ? {border:'2px solid red'} : {}">
 
@@ -113,8 +113,8 @@
                 <label for="pic" class="form-label">Profile Pic</label>
                 <input type="file" class="form-control" id="pic" formControlName="customerProfilePic">
             </div> 
-            <input type="submit" class="btn btn-primary m-2" value="CREATE ACCOUNT" [disabled]="accountInputForm.invalid">
-            <input type="submit" class="btn btn-primary m-2" value="UPDATE ACCOUNT">
+            <input type="submit"  *ngIf="!editFlag" class="btn btn-primary m-2" value="CREATE ACCOUNT" [disabled]="accountInputForm.invalid">
+            <input type="submit"  *ngIf="editFlag" class="btn btn-primary m-2" value="UPDATE ACCOUNT">
             <input type="reset" class="btn btn-primary m-2" value="RESET">
           </form>
     </section>

@@ -11,6 +11,7 @@ import { CRUDService } from '../services/crud.service';
 export class BankAccountComponent {
   searchedAccount=new BankAccount();
   searchFlag=false;
+  editFlag=false;
   accountInputForm:FormGroup=new FormGroup({});
   passwordPattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{5,15}$";
   namePattern="^[A-Za-z ]*";
@@ -71,6 +72,7 @@ export class BankAccountComponent {
      color:'blueviolet',
      textAlign:'center'
   }
+  array=['border','border-2','border-danger'];
   changeStyle(){
     this.h3StyleObject['background-color']='pink';
     this.h3StyleObject.color='yellow';
@@ -132,7 +134,7 @@ export class BankAccountComponent {
     );
   }
   edit(account:BankAccount){
-    //console.log(account);
+    this.editFlag=true;
     this.accountInputForm.controls['id'].setValue(account.id);
     this.accountInputForm.controls['customerId'].setValue(account.customerId); 
     this.accountInputForm.controls['customerName'].setValue(account.customerName);
@@ -140,6 +142,6 @@ export class BankAccountComponent {
     this.accountInputForm.controls['accountType'].setValue(account.accountType);
     this.accountInputForm.controls['accountCreateDate'].setValue(account.accountCreateDate);
   }
-  array=['border','border-2','border-danger'];
+ 
 }
 
