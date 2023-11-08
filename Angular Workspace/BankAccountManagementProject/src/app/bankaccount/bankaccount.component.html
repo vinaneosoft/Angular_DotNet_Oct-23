@@ -25,12 +25,13 @@
         <div class="col-md-3 bg-warning border border-5" *ngFor="let account of accounts">
                 <app-account-card [bankAccount]="account"  (eventEmitter)="fromChild($event)"></app-account-card>
                 <div>
-                    Delete ICON
+                    <button type="button" (click)="deleteAc(account.id)" class="btn btn-danger m-1">DELETE</button>
+                    <button type="button" (click)="edit(account)" class="btn btn-info m-1">EDIT</button>
                 </div>
         </div>
     </div>
     <section class="m-5 border border-3 border-primary">
-        <h3 class="bg-success text-center">ACCOUNT INPUT FORM</h3>
+        <h3 class="bg-success text-center">ACCOUNT INPUT/UPDATE FORM</h3>
         <form class="m-3" [formGroup]="accountInputForm" (submit)="collectAccountDetails()">
             <div class="mb-3">
               <label for="accno" class="form-label">Account Number</label>
@@ -113,6 +114,7 @@
                 <input type="file" class="form-control" id="pic" formControlName="customerProfilePic">
             </div> 
             <input type="submit" class="btn btn-primary m-2" value="CREATE ACCOUNT" [disabled]="accountInputForm.invalid">
+            <input type="submit" class="btn btn-primary m-2" value="UPDATE ACCOUNT">
             <input type="reset" class="btn btn-primary m-2" value="RESET">
           </form>
     </section>

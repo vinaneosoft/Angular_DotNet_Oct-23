@@ -123,7 +123,18 @@ export class BankAccountComponent {
       }
     );
   }
-
+  deleteAc(accountNumber:number){
+    this.crudService.deleteAccountByAccountNumber(accountNumber).subscribe(
+      {
+        next:res=>this.getAccounts(),
+        error:res=>console.log(res)
+      }
+    );
+  }
+  edit(account:BankAccount){
+    //console.log(account);
+    this.accountInputForm.controls['id'].setValue(account.id)
+  }
   array=['border','border-2','border-danger'];
 }
 

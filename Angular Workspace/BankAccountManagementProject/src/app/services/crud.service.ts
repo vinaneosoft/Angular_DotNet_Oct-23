@@ -21,5 +21,9 @@ export class CRUDService {
   getAccountByAccountNumber(accountNumber:number){
     return this.http.get(this.address+"/"+accountNumber) // address+num data is passed in // matching record
   }
+  deleteAccountByAccountNumber(accountNumber:number){
+    return this.http.delete(this.address+"/"+accountNumber) // address+num // match record deleted
+  }
+  
 
 }
