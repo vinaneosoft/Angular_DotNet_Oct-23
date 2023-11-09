@@ -12,6 +12,9 @@ import {MatInputModule} from '@angular/material/input';
   ],
   imports: [
     CommonModule, MatInputModule
+  ],
+  exports:[
+    Test2Component
   ]
 })
 export class BankLoanModule { }

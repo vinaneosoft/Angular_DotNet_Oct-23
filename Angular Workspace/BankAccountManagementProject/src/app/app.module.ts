@@ -33,6 +33,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { TestComponent } from './test/test.component';
+import { BankLoanModule } from './bank-loan/bank-loan.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,7 @@ import { TestComponent } from './test/test.component';
     BrowserModule,MatSlideToggleModule,MatButtonModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule, 
     HttpClientModule, BrowserAnimationsModule, MatIconModule,
-    MatCheckboxModule, MatTooltipModule
+    MatCheckboxModule, MatTooltipModule, BankLoanModule
     // other builtin modules, custom modules goes here
   ],
   providers: [CounterService, GuardService, LoginService, CRUDService],    // services are declared
