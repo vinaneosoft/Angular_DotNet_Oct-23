@@ -92,16 +92,33 @@ export class BankAccountComponent {
   }
   collectAccountDetails(){
     let bankAccount=new BankAccount();
-    bankAccount=this.accountInputForm.value;
+    bankAccount=this.accountInputForm.value; // new values/ updated values
     bankAccount.customerProfilePic="assets/Images/noimage.jpg";
     if(bankAccount.accountDate==null)
          bankAccount.accountDate=new Date();
-
-
-    this.crudService.addAccount(bankAccount).subscribe({
-      next:res=>window.alert("Account Opened Successfully......."),
-      error:res=>console.log(res)
-    });
+    if(this.editFlag==true){
+      //console.log(bankAccount);
+      this.crudService.updateAccountByAccountNumber(bankAccount).subscribe({
+        next:res=>
+        {
+          window.alert("Account Updated Successfully.......")
+          this.getAccounts();
+        },
+        error:res=>console.log(res)
+      });
+        // update function
+      this.editFlag=false;
+    }
+    else{
+      this.crudService.addAccount(bankAccount).subscribe({
+        next:res=>
+        {
+          window.alert("Account Added Successfully.......")
+          this.getAccounts();
+        },
+        error:res=>console.log(res)
+      });
+  }
   }
   getAccounts(){
     this.crudService.getAllAccounts().subscribe({
