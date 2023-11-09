@@ -26,6 +26,13 @@ import { Child3Component } from './child3/child3.component';
 import { CRUDService } from './services/crud.service';
 import {HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { TestComponent } from './test/test.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,11 +51,14 @@ import { SearchComponent } from './search/search.component';
     Child1Component,
     Child2Component,
     Child3Component,
-    SearchComponent // other declarations of components,pipes goes here
+    SearchComponent,
+    TestComponent // other declarations of components,pipes goes here
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
+    BrowserModule,MatSlideToggleModule,MatButtonModule,
+    AppRoutingModule, FormsModule, ReactiveFormsModule, 
+    HttpClientModule, BrowserAnimationsModule, MatIconModule,
+    MatCheckboxModule, MatTooltipModule
     // other builtin modules, custom modules goes here
   ],
   providers: [CounterService, GuardService, LoginService, CRUDService],    // services are declared

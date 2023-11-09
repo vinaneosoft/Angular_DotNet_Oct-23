@@ -24,9 +24,13 @@
     <div class="row">
         <div class="col-md-3 bg-warning border border-5" *ngFor="let account of accounts">
                 <app-account-card [bankAccount]="account"  (eventEmitter)="fromChild($event)"></app-account-card>
-                <div>
-                    <button type="button" (click)="deleteAc(account.id)" class="btn btn-danger m-1">DELETE</button>
-                    <button type="button" (click)="edit(account)" class="btn btn-info m-1">EDIT</button>
+                <div class="d-flex justify-content-around">
+                    <button type="button" matTooltip="delete account" mat-fab color="warn" (click)="deleteAc(account.id)">
+                       <mat-icon>delete</mat-icon>
+                      </button>
+                    <button type="button" matTooltip="edit account" matTooltipPosition="above" mat-fab color="primary"  (click)="edit(account)">
+                        <mat-icon>create</mat-icon>
+                    </button>
                 </div>
         </div>
     </div>
