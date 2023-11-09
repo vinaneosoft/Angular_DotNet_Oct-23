@@ -97,28 +97,11 @@ export class BankAccountComponent {
     if(bankAccount.accountDate==null)
          bankAccount.accountDate=new Date();
     if(this.editFlag==true){
-      //console.log(bankAccount);
-      this.crudService.updateAccountByAccountNumber(bankAccount).subscribe({
-        next:res=>
-        {
-          window.alert("Account Updated Successfully.......")
-          this.getAccounts();
-        },
-        error:res=>console.log(res)
-      });
-        // update function
-      this.editFlag=false;
+     this.updateAcc(bankAccount);
     }
     else{
-      this.crudService.addAccount(bankAccount).subscribe({
-        next:res=>
-        {
-          window.alert("Account Added Successfully.......")
-          this.getAccounts();
-        },
-        error:res=>console.log(res)
-      });
-  }
+     this.addAcc(bankAccount);
+    }
   }
   getAccounts(){
     this.crudService.getAllAccounts().subscribe({
@@ -128,7 +111,6 @@ export class BankAccountComponent {
       error:res=>console.log(res)    
     });
   }
-
   searchAcc(searchForm:any){
     console.log(searchForm.value);
     let accountNumber=parseInt(searchForm.value.accountNumber.trim());
@@ -158,6 +140,27 @@ export class BankAccountComponent {
     this.accountInputForm.controls['accountBalance'].setValue(account.accountBalance);
     this.accountInputForm.controls['accountType'].setValue(account.accountType);
     this.accountInputForm.controls['accountCreateDate'].setValue(account.accountCreateDate);
+  }
+  addAcc(bankAccount:BankAccount){
+    this.crudService.addAccount(bankAccount).subscribe({
+      next:res=>
+      {
+        window.alert("Account Added Successfully.......")
+        this.getAccounts();
+      },
+      error:res=>console.log(res)
+    });
+  }
+  updateAcc(bankAccount:BankAccount){
+  this.crudService.updateAccountByAccountNumber(bankAccount).subscribe({
+    next:res=>
+    {
+      window.alert("Account Updated Successfully.......")
+      this.getAccounts();
+    },
+    error:res=>console.log(res)
+  });
+  this.editFlag=false;
   }
  
 }
